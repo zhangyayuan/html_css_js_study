@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <span>是我内容</span>
+    </div>
+    <input type="text" value="请输入内容">
+    <script>
+        // html() 获取元素内容  相当于原生的innerHTML
+        console.log($("div").html())//  "<span>是我内容</span>"
+        // text() // innerText
+        console.log($("div").text())//"是我内容"
+
+        // val() // value;
+        console.log($("input").val());
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量和作用域及内存</title>
+</head>
+
+<body>
+    <script>
+       /* var box = new Object();
+        box.name = "Lee";
+        var box2 = box;
+        //alert(box2.name);//Lee
+        box2.name = "Zhang";
+        //alert(box.name);//Zhang
+        //alert(box2.name);//Zhang
+        var box = new Object();
+        function p(box){
+                box.name = "Zhang";
+        }
+        p(box);
+        alert(box.name);*/
+
+        // var  box = "lee";
+        // function setBox(){
+        //     return 123;
+        // }
+        //alert(window.box); //"lee"
+        //alert(window.setBox());//123
+        // 全局的变量和函数 都是window对象的属性和方法；
+
+      /*  var box = "lee";
+        function setbox(){
+            //var box = "zhang";
+            box = "zhang"; //去掉 var 变成全局变量
+
+        }
+        alert(box);//lee
+        setbox();//执行代码
+        alert(box);//zhang  */
+
+
+        // var box = "lee";
+        // function setbox(){
+        //     function setcolor(){
+        //         var b = "kekke";
+        //         alert(box);
+        //         alert(b);
+        //     }
+        //     setcolor();
+        // }
+        // setbox();
+
+
+        /* if(true){//  if  语句没有作用域
+            var box = "lee";
+        }
+        alert(window.box);//lee */
+
+
+      /*  var box = "Lee";
+         function setBox(){
+             var box = "red";
+             return box;
+         }
+         alert(setBox());// red */
+
+
+       /* 内存 */
+
+    //    var box = {};
+    //    box.name  = "lee";
+    //     alert(box.name);
+    //     box = null; //销毁全局变量等待垃圾回收
+    //     alert(box);
+
+    // var num = 10;
+    // fun();
+    // function fun(){
+    //     console.log(num);
+    //     var num = 20;
+    // }
+        //遍历对象 
+
+        // var boj = {
+        //     name:"pin",
+        //     age:12,
+        //     sex:"男"
+        // }
+        // for(var key in boj){
+        //     console.log(key);
+        //     console.log(boj[key]);
+        // }
+
+
+        
+        //     function Box(){
+
+        //     };
+        // var boj = new Box();
+    //    var boj = {};
+    //    obj.__proto__ = Box.prototype;
+    //    Box.call(obj);
+
+    </script>
+    基本类型值 ： Undefined Boolean Null Number String 和 Object内存地址 存放在栈内存中
+    //String 在某些语言中以对象的形式表示因此被认定为为引用类型
+    // 可以将内存的地址保存在栈内存当中也就是把变量保存在栈内 ，当查询引用类型变量时
+    先在栈内存中读取内存地址找到堆中的值,这种方法叫做按引用访问
+    引用类型值 ： Object 存放在堆内存当中
+
+     构造函数是把对象封装到函数里;
+     普通函数 把普通的代码
+</body>
+
+</html>

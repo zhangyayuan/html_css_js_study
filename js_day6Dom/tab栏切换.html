@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        ul{
+            list-style:none;
+        }
+        #tab_list {
+            width: 300px;
+            height: 30px;
+        }
+        ul li{
+            float:left;
+            width: 100px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .bg{
+            background-color: rgba(7, 241, 206, 0.6) ;
+        }
+        .item{
+            width: 300px;
+            height: 200px;
+            border: 1px solid rgba(7, 241, 206, 0.6);
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="tab_list">
+        <ul>
+            <li class="bg">昨天</li>
+            <li>今天</li>
+            <li>明天</li>
+        </ul>
+    </div>
+    <div class="item" style="display:block">昨天 </div>
+    <div class="item">今天</div>
+    <div class="item">明天</div>
+
+    <script>
+        var li = document.getElementById("tab_list").getElementsByTagName("li");
+        var item = document.getElementsByClassName("item");
+        for(var i = 0;i < li.length;i++){
+            li[i].setAttribute("index",i);           li[i].onclick = function(){
+                for(var i = 0;i < li.length;i++){
+                    li[i].className ="";
+                    item[i].style.display ="none";
+                }
+                this.className = "bg";
+                item[this.getAttribute("index")].style.display="block";
+            }
+        }
+    </script>
+</body>
+</html>

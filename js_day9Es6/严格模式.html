@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>//第一种方法
+        'use strict'
+        // 下面的js 代码就会按照严格模式执行代码
+    </script>
+    <script>//第二种方法
+        (function(){
+            'use strict'
+        })()
+    </script>
+    <script>
+        // 为某个函数开启严格模式
+        function fn(){
+            'use strict';
+            //下面的代码按照严格模式执行
+        }
+        function sum(){
+            // 里面的代码按照普通模式执行 
+        }
+    </script>
+</body>
+</html>

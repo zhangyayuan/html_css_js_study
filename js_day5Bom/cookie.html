@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/"></script>
+</head>
+<body>
+    <script>
+        // 字符串     变量名 =值 
+        var d = new Date();
+        d.setTime(d.getTime() + 3*24*60*60*1000);
+        console.log(d.toUTCString());
+        window.document.cookie = "username=admin;expires=" + d.toUTCString() + ";path=/";
+        console.log(window.document.cookie);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建 类 class 
+        // class Star{
+        //     constructor(vname){//
+        //         this.vname = vname;
+        //     }
+        //     sing(song){  // 创建方法 
+        //         console.log(this.vname + song);
+        //     }
+        // }
+
+        // // 利用类创建对象 new
+        // var ldh = new Star("刘德华");
+        // var zxy = new Star("张学友");
+        // console.log(ldh.vname);
+        // console.log(zxy.vname);
+        // ldh.sing("冰雨");
+
+
+
+
+        /// 类的继承  
+        // class Father{
+        //     constructor(){
+
+        //     }
+        //     money(){
+        //         console.log(1000);
+        //     }
+        // }
+        // class Son extends Father{
+
+        // }
+        // var son = new Son();
+        // son.money();//1000
+
+
+        class Father{
+            constructor(x,y){   
+                this.x = x;
+                this.y = y;
+            }
+            sum(){
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father{
+            constructor(x,y){   
+                // this.x = x;  // 这样不能调用父类方法
+                // this.y = y;
+                super(x,y);  //调用父类中的构造函数
+            }
+        }
+        var son1 = new Son(3,2);
+        var son2 = new Son(2,7);
+        son1.sum();//5
+        son2.sum();//9
+    </script>
+</body>
+</html>

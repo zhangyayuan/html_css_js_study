@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const originObj = { a: 'a', b: 'b', c: [1, 2, 3], d: { dd: 'dd' } };
+        //const targetObj = {}
+        // Object.assign(targetObj, originObj)
+        // console.log(targetObj)//{ a: 'a', b: 'b', c: [1, 2, 3], d: { dd: 'dd' } }
+        // console.log(originObj)//{ a: 'a', b: 'b', c: [1, 2, 3], d: { dd: 'dd' } }
+        // console.log(targetObj === originObj)//false
+        // targetObj.c[0] = 5;
+        // console.log(originObj)//{ a: 'a', b: 'b', c: [5, 2, 3], d: { dd: 'dd' } } //被修改了
+
+        const targetObj = Object.create(originObj)
+        console.log(targetObj)
+        console.log(originObj)
+        console.log(targetObj === originObj)//false
+        targetObj.c[0] = 5;
+        console.log(originObj)
+
+    </script>
+</body>
+
+</html>

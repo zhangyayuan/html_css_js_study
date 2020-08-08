@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            age:23,
+            name:"zhang",
+            fun:{
+                big:34,
+                gods:"dd"
+            }
+        }
+        var o = {};
+        // for(var k in obj){
+        //     o[k] = obj[k];
+        // }
+        // console.log(o);// 浅拷贝
+        // o.fun.big = 56;
+        // console.log(obj.fun.big)//56  原来对象的属性对象被改变 因为只是拷贝了地址；
+
+        function copy(newObj,oldObj){ // 深度拷贝
+            for(var k in oldObj){
+                if(oldObj[k] instanceof Array){
+                    newObj[k] = []
+                    copy(newObj[k],oldObj[k]);
+                }else if(oldObj[k] instanceof Object){
+                    newObj[k] = {};
+                    copy(newObj[k],oldObj[k]);
+                }else{
+                    newObj[k] = oldObj[k];
+                }
+            }
+        }
+        copy(o,obj);
+        console.log(o);
+        o.fun.big = 56;
+        console.log(obj.fun.big)//34 没有被改变
+    </script>
+</body>
+</html>

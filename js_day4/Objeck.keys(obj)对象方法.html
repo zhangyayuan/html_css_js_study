@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object.keys()  用于获取对象自身所有的属性 和for--in 类似
+        // 返回数组
+        // var obj = {
+        //     id:1,
+        //     pname:"小米",
+        //     price:1999,
+        //     num:2000
+        // }
+        // var arr = Object.keys(obj);
+        // console.log(arr);//["id","pname","price","num"];
+
+
+
+        //Object.defineProperty() 、、定义新属性或修改原有属性
+       // bject.defineProperty(obj,prop,descriptor) 
+       //obj  目标对象
+       //prop 需要定义或修改属性的名字
+       //descriptor 目标属性所拥有的特性
+        var obj = {
+            id:1,
+            pname:"小米",
+            price:1999
+        }
+        // obj.num = 1000
+        //Object.defineProperty 添加修改的属性都默认有writable   enumerable configurable
+       Object.defineProperty(obj,"num",{
+           //value 表示num 的值
+           value:1000,
+           //false 不允许修改这个属性值
+           writable:false
+        })
+        Object.defineProperty(obj,"id",{
+           //false 不允许修改这个属性值
+           writable:false
+        })
+
+        Object.defineProperty(obj,"address",{
+           //false 不允许修改这个属性值 默认值false
+           writable:false,
+           // 不允许遍历 默认值为false
+           enumerable:false,
+           // 不允许被删除和 不再被修改里面的configurable特性 默认属性值为 false
+           configurable:false
+        })
+        delete obj.address//不被删除
+    </script>
+</body>
+</html>

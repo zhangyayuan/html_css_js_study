@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="创建一个表格" id="btn">
+    <div id="dv"></div>
+
+    <script>
+        var arr = [["https://www.baidu.com","百度"],["https://www.youku.com","优酷"],["https://www.kugou.com","酷狗"],["https://www.aiqiyi.com","爱奇艺"],["https://www.kuibo.con=m","快播"]];
+        var btn=document.getElementById("btn");
+        var dv = document.getElementById("dv");
+        var count = 0;
+        btn.onclick = function(){
+            var tab = document.createElement("table");
+            tab.border ="1"
+            tab.cellPadding="20";
+            tab.cellSpacing="0";
+            if(count ===0){
+                dv.appendChild(tab);
+            }
+            count++
+            for(var i=0;i<5;i++){
+                var tr = document.createElement("tr");
+                for(var j=0;j<2;j++){
+                    var td = document.createElement("td");
+                    if(j==0){
+                        td.innerHTML = arr[i][1];
+                    }else{
+                        td.innerHTML = "<a href='"+arr[i][0] + "'>" + arr[i][1] + "</a>";
+                    }
+                    tr.appendChild(td);
+                }
+                tab.appendChild(tr);
+            }
+
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var box1 = new Object();
+        // box1.name = "Lee";
+        // box1.age = 24;
+        // var box2 = box1;
+        // box2.name = "zhang";
+        // console.log(box1.name);//zhang 
+
+        // function box(name,age){
+        //     var obj = new  Object();
+        //     obj.name = name;
+        //     obj.age =  age;
+        //     obj.run = function (){
+        //         return this.name + this.age +"运行中...";
+        //     }
+        //     return obj;
+        // }
+        // var box1 = box("zhang",6);
+        // var box2 = box("Lee",43);
+        // alert(box1.name);//zhang
+        // alert(box2.name);//lee
+         
+
+        //  function Box (name,age){
+        //      this.name = name;
+        //      this.age = age;
+        //      this.run = function(){
+        //          return this.name +this.age + "运行中...";
+        //      }
+
+        //  }
+        //  var box1 = new Box("zhang",32);
+        //  var box2 = new Box("Lee",25);
+        //  alert(box1.name);//zhang
+        //  alert(box2.name);//Lee
+
+
+        // function Box(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        //     //Box.prototype.name = name;
+        //     //Box.prototype.age = age;
+        //     Box.prototype.run = function (){
+        //         return this.name + this.age + "运算中>>"
+        //     }
+        // };
+        // var box =new Box("zhang",31);
+        // var box2 = new Box('Leee',21);
+        // // alert(box.run == box2.run);
+        // alert(box.name);
+        // alert(box.age);
+        // alert(box2.name);
+        // alert(box2.age);
+        
+
+        // function Foo(){
+        //     getName = function(){
+        //         alert(1);
+        //     };
+        //    return this;
+        // }
+        // Foo.getName = function (){alert(2);};
+        // Foo.prototype.getName=function () {alert(3);};
+        
+        // function getName(){alert(5);}
+        // var getName = function (){ alert(4);};
+
+        //  Foo.getName(); 
+        //  getName(); 
+        //  Foo().getName(); 
+        //  new Foo.getName(); 
+        //  new Foo().getName(); 
+        //  new new Foo().getName(); 
+         //this.getName();
+
+
+        //  function Box(name,age){
+
+        //  };
+        //  Box.prototype.name ="Lee";
+        //  Box.prototype.age = 17;
+        //  Box.prototype.run = function (){
+        //      return this.name +this.age+"运行中/...";
+        //  }
+        //  function Desk(){
+
+        //  }
+        //  Desk.prototype = Box.prototype;
+        //  var desk1 = new Desk();
+        //  desk1.name = "zhang";
+        //  var desk2 = new Desk();
+        //  alert(desk2.name);
+
+
+
+        // var a = 99;            // 全局变量a
+        // f();                   // f是函数，虽然定义在调用的后面，但是函数声明会提升到作用域的顶部。 
+        // console.log(a);        // a=>99,  此时是全局变量的a
+        // function f() {
+        // console.log(a);      // 当前的a变量是下面变量a声明提升后，默认值undefined
+        // var a = 10;
+        // console.log(a);      // a => 10
+        // }
+
+        // for (var i = 0; i <10; i++) {  
+        // setTimeout(function() {  // 同步注册回调函数到 异步的 宏任务队列。
+        //     console.log(i);        // 执行此代码时，同步代码for循环已经执行完成
+        // }, 0);
+        //console.log(i); 
+        //}
+        
+function Fn() {
+    this.x = 100;
+    this.y = 200;
+    this.getX = function () {
+        console.log(this.x);
+    }
+}
+Fn.prototype = {
+    y: 400,
+    getX: function () {
+        console.log(this.x);
+    },
+    getY: function () {
+        console.log(this.y);
+    },
+    sum:function () {
+        console.log(this.x + this.y);
+    }
+};
+// Fn.prototype.getX = function () {
+//     console.log(this.x);
+// };
+// Fn.prototype.getY = function () {
+//     console.log(this.y);
+// };
+var f1 = new Fn;
+var f2 = new Fn;
+console.log(f1.getX === f2.getX);//false
+console.log(f1.getY === f2.getY);//true
+console.log(f1.__proto__.getY === Fn.prototype.getY);//true
+console.log(f1.__proto__.getX === f2.getX);//false
+console.log(f1.getX === Fn.prototype.getX);//false
+console.log(f1.constructor);//Object
+console.log(Fn.prototype.__proto__.constructor);//Object
+f1.getX();// =>this:f1 f1.x=>100
+f1.__proto__.getX();// =>this:f1.__proto__(Fn.prototype) =>Fn.prototype.x =>undefined
+f2.getY();//=>this:f2 f2.y=>200
+Fn.prototype.getY();//=>this:Fn.prototype Fn.prototype.y=>400
+f1.sum();//=>this:f1 f1.x+f1.y=>300
+Fn.prototype.sum();//=>this:Fn.prototype Fn.prototype.x+Fn.prototype.y=>undefined+400=>NaN
+    </script>
+</body>
+</html>

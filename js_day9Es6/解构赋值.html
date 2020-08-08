@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //数组解构允许我们按照一一对应的关系从数组中提取 值；
+        // let ary = [1,2,3];
+        // let [a,b,c] = ary;
+        // console.log(a);//1
+        // console.log(b);//2
+        // console.log(c);//3
+
+        // let ary = [1,2,3];
+        // let [a,b,c,d] = ary;
+        // console.log(a);//1
+        // console.log(b);//2
+        // console.log(c);//3
+        // console.log(d)//undefined
+
+
+
+
+        // 对象解构 从数组或对象中提取值将提取出来的值赋值给另一个变量
+        // let person = {name:'zhangsan',age:20};
+        // let {name,age} =person;
+        // console.log(name);//zhangsan
+        // console.log(age);//20
+
+        let person = {name:'zhangsan',age:20};
+        let {name:myName} =person;
+        console.log(myName);//zhangsan
+    </script>
+</body>
+</html>

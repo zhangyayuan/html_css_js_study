@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包</title>
+</head>
+<body>
+    <script>
+        //匿名函数
+        // function (){
+
+        // }
+        
+
+        // (function(){
+        //     alert('Lee');
+        // })();
+
+
+        // var box = (function (name){
+        //     return name;
+        // })("zhang");
+        // alert(box)
+
+
+        // // 函数里放一个匿名函数
+        // function box(){
+        //     return function(){
+        //         return "Lee";
+        //     }
+        // };
+        // alert(box()());
+
+
+
+
+        // function box(){
+        //     var arr =[];
+        //     for(var i=0;i<5;i++){
+        //         arr[i]=function(){
+        //             return i;
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // alert(box()[0]);//function(){ return i;}
+        // alert(box()[0]())//5   这是不想要的 需要 1 2 3 4 
+
+
+       
+
+    //    function box(){
+    //         var arr =[];
+    //         for(var i=0;i<5;i++){
+    //             arr[i]=(function(){
+    //                 return i;
+    //             })();
+    //         }
+    //         return arr;
+    //     }
+    //     alert(box());//0,1,2,3,4 
+
+
+
+
+        // function box(){
+        //     var arr =[];
+        //     for(var i=0;i<5;i++){
+        //         arr[i]=(function(num){
+        //             return function(){
+        //                 return num;
+        //             }
+        //         })(i)();
+        //     }
+        //     return arr;
+        // }
+        // alert(box());//0,1,2,3,4 
+
+
+
+
+
+        // var user = "the Window";
+        // var box = {
+        //     use:"the Box",
+        //     getUser:function(){
+        //         return function(){
+        //             return this.user; 
+        //             // 闭包最终指向window 这里的
+        //         }
+        //     }
+        // }
+        // alert(box.getUser()());//"the Window"
+
+
+
+
+
+        // var user = "the Window";
+        // var box = {
+        //     user:"the Box",
+        //     getUser:function(){
+        //         var that =this;
+        //         return function(){
+        //             return that.user;
+        //         }
+        //     }
+        // }
+        // alert(box.getUser()());//"the Box"
+
+
+        // function box(){
+        //     (function (){
+        //         for(var i = 0; i<5;i++){
+        //             alert(i);
+        //         }
+        //     })();
+        //     alert(i);//
+        // }
+        // box()
+        // function Box(name,age){
+        //         this.name = name ;
+        //         this.age = age;
+        //         this.run = function(){
+        //             return this.name + this.age +"运行中...";
+        //         }
+        // }
+        //  (function(){
+        //     var box1 = new Box("zhang",12);
+        //     document.write(box1.name);
+        //  })()
+        //  var box2 = new Box("Lee",51);
+        //  document.write(box2.name);
+
+
+        function Box(){
+            var age = 100;
+            function run(){
+                return '运行中';
+            }
+            this.pulicGo = function (){
+                return age +  run();
+            }
+            this.getAge = function(){
+                return  age;
+            
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <input type="button" onclick ="show(this.value)" value="red">
+    <input type="button" onclick ="show(this.value)" value="yellow">
+    <input type="button" onclick ="show(this.value)" value="blue">
+    <input type="button" onclick ="subclose()"value="关闭子窗口">
+    <script>
+        //window.onload = function () {
+            var sub_open = open("","_blank","width=300,height=300,top=300,left=300")
+            function show(value){
+                sub_open.document.body.style.backgroundColor=value;
+            }//设置子窗口 颜色
+
+            function subclose(){
+                if(!sub_open.closed){// 判断子窗口是否关闭
+                    sub_open.close()//关闭子窗口
+                }
+            }
+            //opener   //父窗口
+         //}
+     </script>
+</body>
+</html>

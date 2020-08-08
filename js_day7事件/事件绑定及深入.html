@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件绑定及深入</title>
+    <!-- <script type = "text/javascript" src="js/demo1.js"></script>
+    <script type = "text/javascript" src="js/demo2.js"> </script> -->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width: 100px;
+            height:100px;
+            border: 1px solid  aqua;
+        }
+        .red{
+           
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="box">
+
+</div>
+<script>
+    var box = document.getElementById("box");
+    // box.onclick = toBlue;
+    // box.onclick = function(){
+    //     alert("同时执行两个");
+    //     toRed.call(this);
+    // }
+    // addEvent(box,"click",function(){
+    //     alert("zyy");
+    // });
+    // addEvent(box,"click",toRed);
+  
+    // addEvent(box,"click",function(){
+    //     alert("zyy");
+    // })
+    //function toRed(){
+    //    this.className = "red";
+        // removeEvent(this,"click",toRed);
+        // addEvent(this,"click",toBlue);
+     //   this.removeEventListener("click",toRed,false)
+      //  this.addEventListener("click",toBlue,false);
+    //}
+    //function toBlue(){
+     //   this.className = "blue";
+        // removeEvent(this,"click",toBlue);
+        // addEvent(this,"click",toRed);
+    //    this.removeEventListener("click",toBlue,false)
+    //    this.addEventListener("click",toRed,false);
+   // }
+    // box.addEventListener('click',function(){
+    //     alert("尽管弹");
+    // },false)
+   // box.addEventListener("click",toRed,false);
+    // box.addEventListener('click',function(){
+    //     alert("尽管弹");
+    // },false)
+    // function addEvent(obj,evt,fn){
+    //     var saved = null;
+    //     if(typeof obj["on"+evt] =="function"){
+    //         saved = obj["on"+evt];
+    //     };
+    //     obj["on"+evt] = function(){
+    //         if(saved)saved()
+    //         fn.call(this);
+    //     };
+    // }
+    // function  removeEvent(obj,evt){
+    //     if(obj["on"+evt]) obj["on"+evt] = null;
+    // }
+                                                                                                                                                                       
+
+
+    // 兼容代码
+    function addEventListener(ele,type,fn){
+        if(ele.addEventListener){
+            return ele.addEventListener(type,fn,false);
+        }else if(ele.attachEvent){
+            return ele.attachEvent("on"+type,fn)
+        }else{
+            ele["on"+type]=fn;
+        }
+    }
+    addEventListener(box,"click",function(){
+        console.                                                                       log("111111111")
+    })
+    addEventListener(box,"click",function(){                            
+        console.log("222222222")
+    })
+    addEventListener(box,"click",function(){
+        console.log("333333333")
+    })
+    //attachEvent ie8 支持不一样
+    //现在遇到的逆境都是以后成长的阶梯
+
+
+    function removeEvent(ele,type,fnName){
+        if(ele.removeEventListener){
+            return ele.removeEventListener(type,fnName,false);
+        }else if(ele.detachEvent){
+            return ele.detachEvent("on"+type,+fnName);
+        }else{
+            ele["on"+type]=null;
+        }
+    }
+</script>
+</body>
+</html>

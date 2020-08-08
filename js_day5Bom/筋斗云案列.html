@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .box{
+            position: relative;
+            height:50px;
+            width:505px;
+            margin:0 auto;
+        }
+        .box ul li{
+            float: left;
+            list-style: none;
+            width: 100px;
+            height:50px;
+            text-align: center;
+            line-height: 30px;
+            border-left:1px solid #ccc;
+            cursor: pointer;
+        }
+        span{
+            display: inline-block;
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100px;
+            height: 30px;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span id="coming">我来了</span>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+    <script>
+        var list = document.querySelector(".box").children[1].children;
+        var com = document.getElementById("coming");
+        var star = com.offsetLeft;
+        for(var i=0;i<list.length;i++){
+            list[i].addEventListener("mouseover",mouseoverHandle,true);
+            list[i].addEventListener("mouseout",mouseoutHandle,true);
+            list[i].addEventListener("click",clickHandle,true);
+        }
+        function mouseoverHandle(){
+            console.log(this.offsetLeft);
+            animation(com,this.offsetLeft);
+        }
+        function clickHandle(){
+            star = this.offsetLeft;
+        }
+        function mouseoutHandle(){
+            animation(com,star)
+        }
+
+
+        function animation(ele,target){
+            if(ele.setT){
+                clearInterval(ele.setT);
+            }
+            ele.setT = setInterval(function(){
+                var tep = 9;
+                var current = ele.offsetLeft;
+                current +=(target-current)>0 ? tep : -tep;
+                if(Math.abs(target-current)>=10){
+                    ele.style.left = current +"px";
+                }else{
+                    clearInterval(ele.setT);
+                    ele.style.left = target +"px";
+                }
+            },10)
+        }
+      
+    </script>
+</body>
+</html>

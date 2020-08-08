@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数是用来简化函数定义语法的
+    //    const fn = ()=>{
+    //     console.log(123);
+    //     }
+    //     fn();//123
+
+    // function sum(num1,num2){
+    //     return num1 + num2;/// 只有一段代码
+    // }
+    // // 上下相同
+    //  const sum = (num1,num2) => num1+num2;
+    //  console.log(sum(3,5));//8
+
+
+    //const fn = (v) => {
+    // const fn = v => {// 一个形参可以省略括号
+    //     console.log(v);
+    // }
+    // fn(20)//20
+
+
+
+    // 箭头函数不绑定this; 指向箭头函数定义区域的this
+    // function fn(){
+    //     console.log(this);//{name: "zhang"}
+    //     return ()=>{
+    //         console.log(this);//{name: "zhang"}  
+    //         // 不是window哦 我去
+    //     }
+    // }
+    // const obj = {name:"zhang"};
+    // const  resFn = fn.call(obj);
+    // resFn();//{name: "zhang"}
+
+
+  
+    var obj ={
+        age:20,
+        say:() =>{
+           console.log(this.age);//undefined
+           console.log(this);//居然是window、、、
+        }
+    }
+    obj.say();//undefined
+    </script>
+</body>
+</html>

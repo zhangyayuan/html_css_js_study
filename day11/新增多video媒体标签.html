@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        video{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+      <!-- video   视频  Mp4 格式网络常用    常用写法-->
+    <video src="media/mi.mp4" autoplay="autoplay" muted="muted" controls="controls" loop="loop" poster="media/mi9.jpg"></video>
+    <!-- 
+        autoplay="autoplay" 谷歌浏览器 不能自动播放 需要加上 muted="muted" 静音
+        contbrols="controls" //显示播放控件 /不常用 一般都是自己写
+        loop = “loop” 循环播放 
+        preload  =“auto” 预先加载视频  none 不预先 加载 如果 有了autoplay 就忽略
+        poster=url(images) // 加载前的页面
+     -->
+    <!-- video 兼容性写法 -->
+    <!-- <video width="320" height="240" controls>
+        <source src="media/mi.mp4" type="video/mp4">
+        <source src="media/mi.ogg" type="video/ogg">
+    </video> -->
+</body>
+</html>

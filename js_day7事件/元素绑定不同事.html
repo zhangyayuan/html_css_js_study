@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="button" value="颜色" id="btn">
+        <script>
+            var btn = document.getElementById("btn");
+            btn.onclick = f1;
+            btn.onmouseover =f1;
+            btn.onmouseout = f1;
+            function f1(e){
+                switch(e.type){
+                    case "click":
+                        alert("好帅哦");
+                        break;
+                    case "mouseover":
+                        this.style.backgroundColor = "red";
+                        break;
+                    case "mouseout":
+                        this.style.backgroundColor = "orange";
+                        break;
+                        default:
+                            alert("外星人来了");
+                }
+            }
+        </script>
+</body>
+</html>

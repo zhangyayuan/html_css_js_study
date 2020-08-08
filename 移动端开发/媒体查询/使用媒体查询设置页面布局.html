@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+             box-sizing:border-box; /*padding border 都包含在width 里面 */
+        }
+        .box{
+            width:100%;
+            height:100%;
+            background-color: blue;
+        }
+        .box div{
+            float:left;
+            width:20%;
+            height:20%;
+            background-color:aqua;
+            border: 10px solid red;
+        }
+        @media screen and (min-width:600px){
+            .box div{
+                width:100%;
+                height:100%;
+            }
+        }
+        @media screen and (min-width:800px){
+            .box div{
+                width:50%;
+                height:50%;
+            }
+        }
+        @media screen and (min-width:1000px){
+            .box div{
+                width:33%;
+                height:33%;
+            }
+        }
+        @media screen and (min-width:1200px){
+            .box div{
+                width:25%;
+                height:25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

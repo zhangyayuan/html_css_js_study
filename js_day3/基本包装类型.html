@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本包装类型</title>
+</head>
+<body>
+    <script>
+       /* var box = "mr.lee";
+        alert(box.substring(2));//.lee 从2位置开始复制
+        alert(box)//"mr.lee" */
+
+
+
+
+        // var box = 100;
+        // alert(box.MAX_VALUE);//undefined
+        // alert(Number.MAX_VALUE);//1.7976931348623157e+308
+        // alert(Number.MIN_VALUE);//5e-324
+
+       /* var  box = 1000.45765;
+        //alert(typeof box);//number
+       // alert(typeof box.toString());//string
+        //alert(box.toLocaleString());//1,000
+        alert(box.toFixed(2));//1000.46 保留两位小数点 转换成字符串 四舍五入法
+        alert(box.toExponential());//1.00045765e+3 以指数形式
+        alert(box.toPrecision(5))//1000.5 根据参数确定或者点数
+   b     */
+
+
+        // var box = "mr.leee";
+        // alert(box.charAt(1));//r  1位置索引的值
+        // alert(box.charCodeAt(4));//101 = e 返回的e 的ascll编码
+
+        // var box = "mr.lee";
+        // alert(box.concat(" is"," teacher"));//mr.lee is teacher
+        // alert(box)//mr.lee 不变
+
+        //var box = "mr.leeee";
+         //alert(box.slice(2,5));//.le [234]
+         //alert(box.substring(2,5))// .le 同上
+         //alert(box.substr(2,5))//.leee 从2 开始选5个
+        //  alert(box.slice(-2));//ee  box.length+(-2) = 5 从第5个位置开始
+        //  alert(box.slice(1,-2)) //r.lee  (1,-2)=>(1,5)
+        //  alert(box.substring(-2));//mr.leeee 负数全部返回
+        //  alert(box.substring(1,-2));//m (1,-2) =>(1,0)=>(0,1)
+        //  alert(box.substr(-2));//ee 和slice负数参数一样
+        //  alert(box.substr(-5,3));//lee (-5,3)=>(box.length+(-5),3) =(3,3)
+        //  alert(box) //mr.leeee 不变
+
+
+
+       // var box = "LzhangLeeeeLee";
+        // alert(box.indexOf("L"));//5   从0个位置往后搜索L第一次出现的位置
+        // alert(box.lastIndexOf("L"));//11 从最后一个位置往前搜索L第一次出现的位置
+        // alert(box.indexOf("L",6));//11 从第6个位置往后搜索L第一次出现的位置
+        // alert(box.lastIndexOf("L",6));//5  从第6个位置往前搜索L第一次出现的位置
+        // alert(box.indexOf("3"));//-1 找不到返回-1
+         //alert(box.indexOf("L",12));//-1 找不到返回-1
+
+        //var box  = "Mr.Lee";
+        //alert(box.toLowerCase());//mr.lee 全部小写
+        //alert(box.toUpperCase());//MR.LEE 全部大写
+        //
+
+
+        // 随机整数
+        
+        function getRandom(min,max){
+           return Math.floor(Math.random()*(max-min+1)) + min;
+        }
+        // var arr = ["张三","李四","zhang","网二","麻子"];
+        // var indexof = getRandom(0,arr.length-1);
+        // alert(arr[indexof]);
+
+        var num = getRandom(0,10);
+        var bool = true;
+        while(bool){
+            var pro = prompt("请输入数字",0);
+            if(pro>num){
+                alert("大了");
+            }else if(pro == num){
+                alert("对了");
+                bool = false;// break 更方便
+            }else{
+                alert("小了");
+            }
+        }
+        
+    </script>
+</body>
+</html>

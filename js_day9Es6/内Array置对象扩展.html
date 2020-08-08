@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+   <script>
+    //    let arrayL = {
+    //        "0":"a",
+    //        "1":"b",
+    //        "2":"c",
+    //        "3":"d",
+    //        "4":"e",
+    //        length:5
+    //    }
+
+    //    let  arr2 = Array.from(arrayL);  // 将伪数组转化成数组
+    //    console.log(arr2);//{"a","b","c","d","e"}
+
+
+    let arrayL = {
+           "0":"1",
+           "1":"2",
+           length:2
+       }
+
+       let  arr2 = Array.from(arrayL,item => item*2);  // 将伪数组转化成数组
+       console.log(arr2);//[2,4]
+   </script> 
+</body>
+</html>

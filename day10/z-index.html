@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .ks-clear:after, .clear:after {
+            content: '\20';
+            display: block;
+            height: 0;
+            clear: both;
+        }
+        .ks-clear, .clear {
+            *zoom: 1;
+         }
+        div{
+            width: 400px;
+            margin-left:100px;
+            background-color: yellow;
+        }
+        ul{
+            list-style:none;
+        }
+        ul li{
+            position: relative;
+            float:left;
+            width:99px;
+            height:200px;
+            border:1px solid red;
+            margin-left:-1px;
+        }
+        ul li:hover{
+            z-index:1;
+            border-color:blue
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <ul class="clear">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

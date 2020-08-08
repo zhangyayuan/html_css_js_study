@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // fofEach  遍历数组 用途：商品数据
+        // var arr = [1,2,3];
+        // arr.forEach(function(value,index,array){
+        //     console.log("每个数组的元素" +  value);
+        //     console.log("每个数组的元素的索引" + index);
+        //     console.log("数组本身" +  array);
+        // })
+        //  每个数组的元素1
+        //  每个数组的元素的索引0
+        //  数组本身1,2,3
+        //  每个数组的元素2
+        //  每个数组的元素的索引1
+        //  数组本身1,2,3
+        //  每个数组的元素3
+        //  每个数组的元素的索引2
+        //  数组本身1,2,3
+
+
+        // filter 、、 帅选数组  //商品范围 筛选
+        var arr = [12,5,34,66,22];
+        var newArr = arr.filter(function(value,index){
+                        return  value>=20; //值为真就返回 value
+                    })
+            console.log(newArr);//[34,66,22]  返回新的数组
+
+           
+        // some 查找数组中是否有满足条件的元素 // 唯一商品 查找
+        var arr = [10,30,50];
+        var flag = arr.some(function(value,index,arr){
+            return value == 10; //查找有没有10 找到终止循环返回布尔值
+        })
+
+    // 还有很多筛选方法有时间 自己要找
+       // findIndex   find
+        var index = arr.findIndex(item => item._id === id)
+    </script>
+</body>
+</html>

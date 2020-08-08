@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let 声明的变量 只在所处于的块级有效
+        // if(true){
+
+        //     let a =10;
+        //     //var a = 10;
+        // }
+        // console.log(a) // a is not defined
+
+        // let 声明变量不会提升；且在打扩号里形成死区；
+
+        var num =10;
+        if(true){
+            console.log(num);//Cannot access 'num' before initialization
+            let num = 9;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(function(){
+        // 1. Dom对象 用原生js获取出来的就是Dom对象
+            var myDiv = document.querySelector("div");
+            console.dir(myDiv);
+            console.log(myDiv);
+
+        //2. jQuery对象
+            $('div');// $("div");是一个jQuery对象
+            console.dir($("div"));
+            console.log($("div"));
+
+
+        //3. Dom对象和jQuery 对象的相互转换
+            // 1
+            var myVideo = decument.querySelector("video");
+            $(myVideo);
+
+            //2 jquery 转换成  BOM  对象
+            $("video")[0].play();
+            $("video").get(0).play();
+        })
+    </script>
+    <div></div>
+    <video src="mov.mp4"></video>
+</body>
+</html>

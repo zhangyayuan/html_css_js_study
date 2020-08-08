@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav">
+        <li>滴滴滴1</li>
+        <li>滴滴滴2</li>
+        <li>滴滴滴3</li>
+        <li>滴滴滴4</li>
+        <li>滴滴滴5</li>
+    </ul>
+    <input type="text" name="" id="text">
+    <input type="button" value="价格" id="btn">
+    <div id="box"></div>
+    <script>
+        // 闭包应用 点击li 输出当前li索引值
+        // 1 普通写法
+        // var lis = document.querySelector(".nav").children;
+        // for(var i = 0;i < lis.length;i++){
+        //     lis[i].setAttribute("index",i);
+        //     lis[i].onclick = function(){
+        //         console.log(this.getAttribute("index"));
+        //     }
+        // }
+
+        // // 闭包写法
+        // var lis = document.querySelector(".nav").children;
+        // for(var i = 0;i < lis.length;i++){
+        //     (function(i){ //立即执行 就是个小闭包   // 内存泄露了 这里不建议使用
+        //         lis[i].onclick = function(){
+        //             console.log(i);
+        //         }
+        //     })(i);
+        // }
+
+
+        // 闭包计算打车价格
+        // 打车起步价13（3公里内） 之后每公里加5 用户输入公里数计算打车价格
+        // 如果拥堵情况 总价格收取10块钱拥堵费;
+         var text = document.getElementById("text");
+         var btn = document.getElementById("btn");
+         var box = document.getElementById("box");
+         var car=(function fn(){
+                var star = 13;
+                var total = 0;
+                return {
+                    price:function(n,flag){
+                        if(n <= 3){
+                            total = 13;
+                        }else{
+                            total = star +  (n-3)*5;
+                        }
+                        return flag ? (total + 10) : total;
+                    }
+                }
+            })()
+         btn.onclick = function(){
+            var val = text.value;
+            box.innerHTML = car.price(val,true);
+         }
+    </script>
+</body>
+</html>

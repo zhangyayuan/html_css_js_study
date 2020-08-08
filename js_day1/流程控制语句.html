@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程控制语句</title>
+</head>
+
+<body>
+    <script>
+        // var box = 100; //  单行语句
+        // { // 复合语句 一般称它为代码块
+        //     var height = 200;
+        //     var width = 300;
+        // }
+        // var box = 100;
+        // if(box>50){ // if括号里面的返回结果true 才会执行后面的一条语句
+        //     alert(box);
+        // }
+        // var box = 50;
+        // if(box>50)
+        // alert(box)//不会被执行
+        // alert(box)//50
+
+        // var box = 100;
+        // if(box>50){
+        //     alert("box大于50")
+        // }else{
+        //     alert("box小于或等于50")
+        // }
+
+        // var score = 90;
+        // if(score == 100){
+        //     alert("满分");
+        // }else if(score<100 && score>=90){
+        //     alert("优秀");
+        // }else if(score>=70){
+        //     alert("良好");
+        // }else if(score>=60){
+        //     alert("及格");
+        // }else if(score<=60){
+        //     alert("不及格")
+        // }
+
+        /* switch 语句 */
+        // var box = 7;
+        // switch(box){
+        //     case 1:                 //case 1: 相当于if语句里的（box==1）
+        //         alert("one"); 
+        //         break;   // break 中途退出 防止穿透
+        //     case 2:
+        //         alert("two");
+        //         break;
+        //     case 3:
+        //         alert("three");
+        //         break;
+        //     case 4:
+        //         alert("four");
+        //         break;
+        //     case 5:
+        //         alert("five");
+        //         break;
+        //         default:    //相当于 else
+        //             alert("出错")
+
+        // }
+
+        /* do{} while(); 循环语句*?*/
+
+        // var box = 1;
+        // do{    //至少执行一次  当while判断为true就继续执行
+        //     alert(box);
+        //     box++;
+        // }while(box<=5);//当while判断为false 就退出循环
+        //    //循环判断要想好 可能出现死循环
+
+        /* while()*/
+        // var box = 110;
+        // while(box<20){
+        //     alert(box);
+        //     box++;
+        // }
+
+        /* for(var box =1;box<=5;box++){} 循环语句 */
+
+        // for (var box = 1; box <= 5; box++) {
+        //     alert(box);
+        // }
+
+        /* for..in语句 */
+        // var box = {
+        //     "name": "zhang",
+        //     "age": "28",
+        //     "height": 178
+        // };
+        // for (var p in box) {
+        //     alert(p);
+        // }
+
+        /* break continue 语句用法*/
+        // for (var box = 1; box <= 10; box++) {
+        //     if (box == 5) break;  // 直接跳出整个循环不再执行下一个
+        //     document.write(box + "<br/>") // 1234
+        // }
+
+        // for (var box = 1; box <= 10; box++) {
+        //     if (box == 5) continue;//跳出当前判断 执行下一个判断
+        //     document.write(box + "<br/>")
+        // }
+
+        // /*  with  语句*、*/
+
+        // var box = {
+        //     "name": "zhang",
+        //     "age": "28",
+        //     "height": 178
+        // };
+        // with (box) {
+        //     var n = name;
+        //     var a = age;
+        //     var h = height;
+        // }
+        // alert(n+a+h)
+            try{
+                aaatye("ddddd");
+            }catch(err){
+                alert(err);
+            }
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 两种方式
+        $(function (){
+            // 此处是页面Dom加载完成的入口
+            $("#box").hide();
+        });
+        // $(document).ready(function(){
+        //     //此处是页面加载完成的入口
+        // })
+
+
+        // $ jQuery就是 顶级对象了
+    </script>
+    <div id="box"></div>
+</body>
+</html>

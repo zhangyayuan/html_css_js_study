@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var pattern = /g..gle/gi;//点符号表示匹配出换行符外任何字符
+        // var str = 'g54gle';
+        // alert(pattern.test(str));//true
+
+        var pattern = /go*gle/;//*符号表示限定多个o
+        var str = 'gooogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /go+gle/;//+符号表示限定1个或多个 
+        var str = 'gooogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /go?gle/;//？符号表示限定1个或0个 
+        var str = 'gogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /go{2,4}gle/;//{2,4}表示限定o 2-4次
+        var str = 'gogle';
+        //alert(pattern.test(str));//false
+
+        var pattern = /go{3}gle/;//{3}表示只限定3个
+        var str = 'gogle';
+        //alert(pattern.test(str));//false
+
+        var pattern = /go{3,}gle/;//{3,}表示限定3个或3给个以上
+        var str = 'gogle';
+        //alert(pattern.test(str));//false
+
+        var pattern = /[a-z]oogle/;//[a-z]表示26个小写字母任意一个
+        var str = 'moogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /[A-Z]oogle/;//[a-z]表示26个大写写字母任意一个
+        var str = 'moogle';
+        //alert(pattern.test(str));//false
+
+        var pattern = /[0-9]oogle/;//[0-9]表示0-9
+        var str = '9oogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /[0-9A-Za-z]oogle/;//[0-9A-Za-z]复合写法
+        var str = 'aoogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /[^A-Z0-9a-z]oogle/;//匹配任意不在0-9a-z 中的字符
+        // ^ 加在中括号里面
+        var str = '-oogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /^[a-z]oogle/;// 这里^ 表示 第一个匹配必须是这个
+        // ^ 加在中括号里面
+        var str = 'ggggoogle';
+       // alert(pattern.test(str));//false
+
+        var pattern = /^[a-z]+oogle/;// + 就可以匹配多个了 
+        // ^ 加在中括号里面
+        var str = 'ggggoogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /\woogle/;//\w 表示匹配[A-Z0-9a-z_]
+        // ^ 加在中括号里面
+        var str = '_oogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /\Woogle/;//\w 表示匹配[^A-Z0-9a-z_]
+        // ^ 加在中括号里面
+        var str = '_oogle';
+        //alert(pattern.test(str));//false
+
+        var pattern = /\doogle/;//\d 表示匹配[0-9]
+        var str = '0oogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /\Doogle/;//\d 表示匹配[^0-9]
+        var str = 'yyoogle';
+        //alert(pattern.test(str));//true
+
+        var pattern = /^[a-z]oogle[0-9]$/;//$ 强制尾匹配[0=9]
+        var str = 'yyoogle444';//yoogle4  没有在首尾
+        //alert(pattern.test(str));//false
+
+
+        var pattern = /goo\s\sgle/;//\s 表示空格
+        var str = 'goo  gle';//
+        //alert(pattern.test(str));//true
+
+        var pattern = /g\boogle/;//\b 表示是否到达边界
+        var str = 'google';//
+        //alert(pattern.test(str));//false
+
+        var pattern = /google|baidu|sougou/;//| 表示匹配或选择模式
+        var str = 'baidu';//
+        //alert(pattern.test(str));//true
+
+        var pattern = /(google){4,8}$/;// ()表示一组 
+        var str = 'googlegooglegooglegoogle';//
+        //alert(pattern.test(str));//true
+
+        var pattern = /8(.*)8/;
+        var str ="this is 8google8";
+        alert(pattern.test(str));//true
+        alert(RegExp.$1)//google 
+        // RegExp.$1 获取第一个分组对应的匹配字符串
+    </script>
+    </script>
+</body>
+</html>

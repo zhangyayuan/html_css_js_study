@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #box{
+            position:absolute;
+            left:0;
+            top:20px;
+            width: 200px;
+            height:100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="移动到400" id="prev">
+    <input type="button" value="移动到800" id="next">
+    <div id="box"></div>
+    <script>
+        var prev = document.getElementById("prev");
+        var next= document.getElementById("next");
+        var box= document.getElementById("box");
+        prev.onclick = function(){
+            animation(box,"top",400);
+        }
+        next.onclick = function(){
+            animation(box,"top",800);
+        }
+        function animation(ele,attr,target){
+            if(ele.setT){
+                clearInterval(ele.setT);
+            }
+            ele.setT = setInterval(function(){
+                var current = parseInt(getStyle(ele,attr));
+                var tep = (target-current)/10;
+                tep = tep >0 ? Math.ceil(tep) : Math.floor(tep);
+                current += tep;
+                ele.style[attr] = current +"px";
+                if(target == current){
+                    clearInterval(ele.setT);
+                }
+                console.log("目标位置"+target + "当前位置" + current + "每一步" + tep);
+            },10)
+        }
+      function getStyle(ele,attr){
+          return window.getComputedStyle ? window.getComputedStyle(ele,null)[attr] : window.currentStyle[attr];
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="dv">
+      <span>这是dv第一个span标签</span>
+      <p id = "p">这是dv中的第二个元素,第一个p</p>
+      <ul id ="uu">
+          <li></li>
+      </ul> 最后一个子节点
+   </div>
+   <script>
+        // nodeType: 1 元素,2属性,3文本 
+        //nodeName
+        //nodeValue
+    //     var uu = document.getElementById("uu");
+    //     var dv = document.getElementById("dv");
+    //     // console.log(uu.parentNode);
+    //     // console.log(uu.parentElement);
+    //     // console.log(uu.parentNode.nodeType);
+    //     // console.log(uu.parentNode.nodeName);
+    //     // console.log(uu.parentNode.nodeValue);
+    //   // console.log(dv.childNodes);//NodeList(7)
+    //     //console.log(dv.children);//HTMLCollection(3)
+    //     for(var i = 0; i <dv.childNodes.length;i++){
+    //         var node = dv.childNodes[i];
+    //         console.log(node.nodeType+"=====" + node.nodeName + "====" + node.nodeValue);
+
+    //     }
+        // var dv = document.getElementById("dv").getAttributeNode("id");
+        // console.log(dv.nodeType + "=="+dv.nodeName + "==" + dv.nodeValue)
+        var dv = document.getElementById("dv");
+        var p = document.getElementById("p");
+        console.log(dv.firstChild);// 第一个子节点 ie8 没有文字就是第一个元素
+        console.log(dv.firstElementChild)//第一个子元素 ie8 undefined
+        console.log(dv.lastChild);//最后一个子元素
+        console.log(dv.lastElementChild);//最后有一个子节点
+        console.log(p.previousSibling);//上一个兄弟节点
+        console.log(p.previousElementSibling);//上一个兄弟元素
+        console.log(p.nextSibling);//上一个兄弟节点
+        console.log(p.nextElementSibling);//上一个兄弟元素
+    </script>
+</body>
+</html>

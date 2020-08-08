@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ["1233", "4456", "rtyt", "y655577", "4hgyyety", "78fggfg"];
+        var ul = document.createElement("ul");
+        for (var i = 0; i < arr.length; i++) {
+            var li = document.createElement("li");
+            li.innerHTML = arr[i];
+            ul.appendChild(li);
+            li.onmouseover = mouseoverHandle;
+            li.onmouseout = mouseoutHandle;
+        }
+        document.body.appendChild(ul);
+        function mouseoverHandle() {
+            this.style.backgroundColor = "red";
+        }
+        function mouseoutHandle() {
+            this.style.backgroundColor = "";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象与原型</title>
+</head>
+
+<body>
+    <script>
+        // var box = new Object();
+        // box.name = "lee";
+        // box.age = 100;
+        // box.run = function () {
+        //     return this.name + this.age + "运行中...";
+        // }
+        // alert(box.run());
+
+        // var box1 = new Object();
+        // box1.name = "Lee";
+        // box1.age = 26;
+        // box1.run = function (){
+        //     return box1.name + box1.age +" 运行中.....";
+        // }
+        // var box2 = box1;
+        // box2.name = "zhang";
+        // box2.age = 18;
+        // box2.run = function (){
+        //     return box.name + box.age +" 运行中.....";
+        // }
+        // alert(box1);
+        // alert(box2);
+        // alert(box1.name);//zhang
+        // alert(box2.name);//zhang
+
+
+        // 工厂模式 // 
+        // function createObject(name,age){
+        //     var obj = new Object();// 创建对象
+        //         obj.name = name;// 添加属性
+        //         obj.age = age;
+        //         obj.run = function (){//添加方法
+        //             return obj.name + obj.age  +  "运行中...";
+        //         }
+        //         return obj;// 返回对象引用
+        // }
+        // var box1 = createObject("Lee",25);//创建一个对象 
+        // var box2 = createObject("zhang",18);// 创建第二个对象
+        // alert(box1.run());
+        // alert(box2.run());
+
+
+        function createObject(name, age) {
+            var obj = new Object();// 创建对象
+            obj.name = name;// 添加属性
+            obj.age = age;
+            obj.run = function () {//添加方法
+                return obj.name + obj.age + "运行中...";
+            }
+            return obj;// 返回对象引用
+        }
+        var box1 = createObject("Lee", 25);//创建一个对象 
+        var box2 = box1;
+        box2.name = "zhang";
+        box2.age = 14;
+        alert(box1.name);//zhang 地址复制给了box2就共享了堆里面的内容
+        // 构造函数 构造方法
+
+        // function Box(name, age) {// 创建一个对象
+        //     this.name = name; /// 添加属性
+        //     this.age = age;
+        //     this.run = function () {//添加一个方法
+        //         return this.name + this.age + "运行中...";
+        //     };
+
+        // }
+        // // this  代表当前作用域
+        // function Desk(name, age) {// 创建一个对象
+        //     this.name = name; /// 添加属性
+        //     this.age = age;
+        //     this.run = function () {//添加一个方法
+        //         return this.name + this.age + "运行中...";
+        //     };
+
+        // }
+        //1.构造函数没有 new Object 但是 它后台会自动 var obj = new Object
+        //2.this就相当于obj
+        //3. 构造函数不需要返回对象引用 后台自动返回
+        // 1.构造函数也是函数，但是函数名第一个字母第一大写
+        // 2必须new  new Box();
+
+        // var box1 = new Box("Lee", 100);
+        // var box2 = new Box("Zhang", 17);
+        // var box3 = new Desk("Liu", 27);
+        // // alert(box1.run());
+        // // alert(box2.run());
+        // alert(box1 instanceof Box);//true
+        // alert(box2 instanceof Box);//true
+        // alert(box3 instanceof Box);//false
+
+        // function Box(name, age) {// 创建一个对象
+        //     this.name = name; /// 添加属性
+        //     this.age = age;
+        //     this.run = function () {//添加一个方法
+        //         return this.name + this.age + "运行中...";
+        //     };
+        // }
+        // var tr = new Object();
+        //     Box.call(tr,"Lee",100);//对象冒充
+        //    /// alert(tr.run());
+
+
+
+        // function Box(name, age) {// 创建一个对象
+        //     this.name = name; /// 添加属性
+        //     this.age = age;
+        //     this.run = function () {//添加一个方法
+        //         return this.name + this.age + "运行中...";
+        //     };
+        // }
+        // var box1 = new Box('Lee',100); //实例化后地址为1
+        // var box2 = new Box("Lee",100);// 实例化后 地址为2
+        // alert(box1.run == box2.run);// false
+
+        // function Box(name, age) {// 创建一个对象
+        //     this.name = name; /// 添加属性
+        //     this.age = age;
+        //     this.run = run;
+        // }
+        // function run(){//把构造函数内部方法通过全局 来实现引用地址一致
+        //     return this.name + this.age + "运行中...";
+        // }
+        // var box1 = new Box('Lee',100); //实例化后地址为1
+        // var box2 = new Box("Lee",100);// 实例化后 地址为2
+        // alert(box1.run == box2.run);// false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width:300px;
+            margin:100px auto;
+        }
+        input{
+            /* height: 25px;
+            line-height: 25px; */
+        }
+        #text{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text" name="" id="text">
+        <input type="button" value="搜索" id="btn">
+    </div>
+    <script>
+        var content = ["我是一个个小小鸟","小明妈妈三天不打他了","我长得真要人命","杨飞龙","杨天班","张大帅","张来到","吴三姑","吴芳饭"] 
+        var text = document.getElementById("text");
+        var box = document.getElementById("box");
+        text.onkeyup = function(){
+            if(document.getElementById("dv")){
+                box.removeChild(document.getElementById("dv"))
+            }
+            var arr = [];
+            if(this.value.length != 0){
+                for(var i=0;i<content.length;i++){
+                    if(content[i].indexOf(this.value) == 0){
+                        arr.push(content[i]);
+                    }
+                }
+                if(arr.length != 0){
+                    var div = document.createElement("div");
+                    div.id = "dv";
+                    div.style.width="200px";
+                    div.style.border="1px solid #000";
+                    for(var j=0;j<arr.length;j++){
+                        var p = document.createElement("p");
+                        p.style.margin ="5px 10px"
+                        p.innerHTML=arr[j];
+                        div.appendChild(p);
+                    }
+                    box.appendChild(div);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

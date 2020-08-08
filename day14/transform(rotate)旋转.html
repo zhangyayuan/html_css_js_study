@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ch-zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+            box-sizing:border-box
+        }
+        input{
+            outline: none;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            border:2px solid pink;
+            border-radius: 50%;
+            transition:transform 1s ease 0.2s;
+        }
+        img:hover{
+            transform:rotate(45deg);
+        }
+        .box{
+            position: relative;
+            height: 24px;
+            width: 124px;
+            border: 1px solid #666;
+        }
+        .txt_arrow{
+            position: absolute;
+            top:7px;
+            right: 10px;
+            height: 6px;
+            width:6px;
+            border-left: 1px solid #666;
+            border-top: 1px solid #666;
+            transform:rotate(-45deg);
+            transition: transform 0.3s;
+        }
+        .txt_arrow:hover{
+            transform:rotate(-135deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="images/pkq.jpg" alt="">
+    <div class="box">
+        <div class="txt_arrow"></div>
+    </div>
+</body>
+</html>

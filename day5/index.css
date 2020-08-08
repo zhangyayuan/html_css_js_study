@@ -1,0 +1,79 @@
+.img1{
+    height: 100px;
+    background-color: green;
+}
+.txt1{
+    height: 30px;
+    background-color: blue;
+}
+td{
+    height: 100px;
+    width: 199px;
+    background-color:black;
+}
+.baidu{
+    width: 100px;
+    height: 100px;
+    color: green;
+    background-color: greenyellow;
+    display:block;
+}
+.div1{
+    height: 100px;
+    width: 100px;
+    background-color: grey;
+    display: inline;
+}
+.span1{
+    height:100px;
+    width: 100px;
+    background-color: hotpink;
+    display: inline-block;
+    /* display: ruby; */
+}
+.mi{
+    width:230px;
+    height: 40px;
+    line-height:40px;
+    background-color:#55585a ;
+    display: block;
+    color:#fff;
+    font-size:14px;
+    text-decoration: none;
+    text-indent:2em
+}
+.mi:hover{
+    background-color: #ff6700;
+}
+.nav span{
+    display:inline-block;
+    width:120px;
+    height: 58px;
+    color:#fff;
+    line-height: 50px;
+    text-align: center;
+}
+.nav .bg1{
+    background: url(images/bg1.png) no-repeat ;
+}
+.nav .bg2{
+    background: url(images/bg2.png) no-repeat ;
+}
+.nav .bg3{
+    background: url(images/bg3.png) no-repeat ;
+}
+.nav .bg4{
+    background: url(images/bg4.png) no-repeat ;
+}
+.nav .bg1:hover{
+    background: url(images/bg11.png) no-repeat ;
+}
+.nav .bg2:hover{
+    background: url(images/bg22.png) no-repeat ;
+}
+.nav .bg3:hover{
+    background: url(images/bg3.jpg) no-repeat ;
+}
+.nav .bg4:hover{
+    background: url(images/bg5.png) no-repeat ;
+}

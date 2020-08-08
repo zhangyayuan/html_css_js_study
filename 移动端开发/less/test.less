@@ -1,0 +1,9 @@
+@color:red;
+.width-height (@r :10px;@t:10px){
+    width:@r;
+    height:@t;
+}
+div{
+    color:@color;
+    .width-height ();
+}

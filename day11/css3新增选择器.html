@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[value]{
+
+        }
+        input[type=text]{
+            
+        }
+        div[class^=icon]{
+
+        }
+        ul li:first-child{
+            background-color:aqua
+        }
+        ul li:last-child{
+            background-color: blue;
+        }
+        ul  li:nth-child(5){
+            background-color: red;
+        }
+        ul li:nth-child(even){
+            background-color: #556643;
+            /* even 偶数 */
+        }
+        ul li:nth-child(odd){
+            background-color: #894443;
+            /* odd 奇数   */
+        }
+        /*  nth-child(n) 从 0 开始每次加1 往后面计算 必须使用n 不是其他字母 */
+        ol li:nth-child(2n){
+            background-color: #234788;
+        }
+        ol li:nth-of-type(2n){
+            background-color: #234788;
+        }
+    </style>
+</head>
+<body>
+    <!-- 属性选择器 -->
+    <input type="text" value="请输入 用户名">
+    <input type="text">
+    <!-- 
+        <input type="text" value="qwertyuiop">
+
+        input[type]
+
+        input[value=qwertyuiop]
+
+        input[value ^= qw] 开头是 qw 的  元素
+
+        input[value $= qw] 结尾是 qw 的元素
+
+        input[value *= qw] 含有 qw 的元素
+     -->
+
+     <div class="icon1"></div>
+     <div class="icon2"></div>
+     <div class="icon3"></div>
+     <div class="icon4"></div>
+
+     <!-- 伪类选择器 -->
+     <ul>
+         <li>我是第1个孩子</li>
+         <li>我是第2个孩子</li>
+         <li>我是第3个孩子</li>
+         <li>我是第4个孩子</li>
+         <li>我是第5个孩子</li>
+         <li>我是第6个孩子</li>
+         <li>我是第7个孩子</li>
+         <li>我是第8个孩子</li>
+     </ul>
+     <ol>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ol>
+    <!-- 
+        2n 偶数
+        2n + 1 奇数
+
+        5n   5  10  15 --------
+
+        n+5  从第5个开始
+
+        -n+5 前5个
+     -->
+     <!-- 伪元素选择器 -->
+     <!-- 
+         nth-child
+
+         requied
+         autofocus
+         autocomplete
+         url
+         time
+         color
+         date
+         email
+         div:hover::after
+         div::after{
+             content:''
+             display:block;
+             height:0;
+             clear:both;
+             visibility:hidden;
+         }
+         video controls autoplay  muted loop poster perload
+         autocomplete
+         autofocus
+         header
+         nav
+         article
+         section
+         aside
+         footer
+      -->
+</body>
+</html>

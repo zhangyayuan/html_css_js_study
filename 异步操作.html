@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyPromise {
+            constructor(fn) {
+                var _this = this;
+                this.state = 'pending';
+                this.res = undefined;
+                this.err = undefined;
+                this.rescb = [];
+                this.errcb = [];
+                function resolve(value) {
+                    console.log(this)
+                    if (_this.state === 'pending') {
+                        _this.res = value;
+                        _this.rescb.forEach(fn => fn(value))
+                        _this.state = 'resolved'
+                    }
+
+                }
+                function reject(err) {
+                    if (_this.state === 'pending') {
+                        _this.err = err;
+                        _this.errcb.forEach(fn => fn(err));
+                        _this.state = 'reject'
+
+                    }
+                }
+                fn(resolve, reject)
+            }
+
+            then(resFn, rejFn) {
+                if (this.state === 'pending') {
+                    if (typeof resFn === 'function') this.rescb.push(resFn)
+                    if (typeof rejFn === 'function') this.errcb.push(rejFn)
+                } else {
+                    if (typeof resFn === 'function') resFn(this.res)
+                    if (typeof rejFn === 'function') rejFn(this.res)
+                }
+
+            }
+        }
+        var insta = new MyPromise(function (res, rej) {
+            setTimeout(function () {
+                res('ddddd')
+            }, 6000)
+        })
+        insta.then(function (res) {
+            console.log(res)
+        })
+    </script>
+</body>
+
+</html>

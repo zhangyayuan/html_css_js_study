@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload =function(){
+            // var box = document.getElementById("box");
+            // var start = document.getElementById("start");
+            // var stop = document.getElementById("stop");
+            // var count = 0;
+            // var setI = null;
+            // function getT(){
+            //     var box = new Date();
+            //     return (box.getHours() < 10 ? ("0" +box.getHours()) : box.getHours()) + ":" + (box.getMinutes() < 10 ? ("0" +box.getMinutes()) : box.getMinutes()) + ":" + (box.getSeconds() < 10 ? ("0" +box.getSeconds()) : box.getSeconds());
+            // } 
+            // start.onclick = function(){
+            //     setI = setInterval(function(){
+            //             box.innerHTML = count++;
+            //         },100);
+            // }
+            // stop.onclick =  function(){
+            //     clearInterval(setI);
+            // } //   秒计时
+
+            // 倒计时
+
+            function countDown(time){
+                var nowTime = +new Date();
+                var userTime =  +new Date(time);
+                var times =(userTime - nowTime)/1000;
+                var d = parseInt(times/60/60/24);
+                var h = parseInt(times/60/60%24);
+                var m = parseInt(times/60%60);
+                var s = parseInt(times%60);
+                if(isNaN(times) || times <= 0 ){
+                    return alert("请输入正确的时间");
+                }else{
+                    return "还剩下" + (d < 10 ? ("0" +d) : d) + "天" + (h < 10 ? ("0" +h) : h) + "小时" + (m < 10 ? ("0" +m) : m) + "分钟" + (s < 10 ? ("0" +s) : s) + "秒";
+                }
+            }
+            var box = document.getElementById("box");
+            box.innerHTML = countDown("2020-4-24 00:00:00")
+            var start = document.getElementById("start");
+            var stop = document.getElementById("stop");
+            var count = 0;
+            var setI = null;
+            start.onclick = function(){
+                setI = setInterval(function(){
+                        box.innerHTML = countDown("2020-4-24 00:00:00");
+                    },1000);
+            }
+            stop.onclick =  function(){
+                clearInterval(setI);
+            } //   秒计时
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box">0</div>
+    <button id="start">开始</button>
+    <button id="stop">结束</button>
+</body>
+</html>

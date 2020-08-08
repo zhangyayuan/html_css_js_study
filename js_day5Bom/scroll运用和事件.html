@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv{
+            width:200px;
+            height:200px;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv">
+        一个个scroll的事件不断出现，
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+        一个个scroll的事件不断出现
+    </div>
+    <input type="button" value = "确定" id="btn">
+    <script>
+        var dv = document.getElementById("dv");
+        var btn = document.getElementById("btn");
+        btn.onclick = function (){
+            console.log(dv.scrollTop);//内容往上溢出的高度
+            console.log(dv.scrollLeft);//
+        }
+        dv.onscroll = function(){
+            console.log(this.scrollTop);
+            console.log(this.scrollLeft);
+        }
+
+        var top = window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;//兼容性代码
+        var left = window.pageXOffset||document.documentElement.scrollLeft||document.body.scrollTop||0;//兼容性代码
+
+    </script>
+</body>
+</html>

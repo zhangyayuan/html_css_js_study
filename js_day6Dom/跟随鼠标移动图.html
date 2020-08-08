@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100px;
+            height:100px;
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        //var body = document.body;
+        var box = document.getElementById("box")
+        document.onmousemove = function(e){
+            box.style.left= e.clientX +"px"; // e.client 可视区坐标
+            box.style.top = e.clientY + "px"; 
+        }
+    </script>
+</body>
+</html>

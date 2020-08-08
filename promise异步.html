@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyPromise {
+            constructor(fn) {
+                var _this = this;
+                this.res = undefined;
+                this.rej = undefined;
+                this.state = 'pending'
+                this.rescb = [];
+                this.rejcb = [];
+                function resfn(val) {
+                    if (_this.state = 'pending') {
+                        _this.res = val
+                        _this.rescb.forEach(fn => fn(val))
+                        _this.state = 'resolve'
+                    }
+
+                }
+                function rejfn(err) {
+                    if (_this.state = 'pending') {
+                        _this.rej = err
+                        _this.rescb.forEach(fn => fn(val))
+                        _this.state = 'reject'
+                    }
+                }
+                fn(resfn, rejfn)
+            }
+            then(resFn, rejFn) {
+                if (this.state = 'pending') {
+                    if (typeof resFn === 'function') this.rescb.push(resFn)
+                    if (typeof rejFn === 'function') this.rejcb.push(rejFn)
+                }
+                if (typeof resFn === 'function') resFn(this.res)
+                if (typeof rejFn === 'function') rejFn(this.err)
+            }
+        }
+        var mp = new MyPromise(function (res, rej) {
+            res('success')
+            rej('err')
+        })
+        mp.then(function (res) {
+            console.log(res)
+        }, function (err) {
+            console.log(err)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            height: 50px;
+            width: 50px;
+            background-color:blue;
+            overflow: hidden;
+        }
+        .media{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            background-color: aqua;
+            transform-origin:left bottom;
+            transform:rotate(90deg);
+            transition:all 0.3s ease 0.1s
+        }
+        .wrap:hover .media{
+            transform:rotate(0deg)
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="media">
+            传媒
+        </div>
+    </div>
+</body>
+</html>

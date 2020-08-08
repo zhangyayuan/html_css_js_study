@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 249px;
+            height: 30px;
+            padding-left:10px;
+            border:2px solid #376324;
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" value="" id="" placeholder="手机">
+    <script>
+        var inp = document.querySelector("input");
+        inp.onfocus = function (){
+            inp.placeholder = "";
+        }
+        inp.onblur = function (){
+            inp.placeholder = "手机";
+        }
+    </script>
+</body>
+</html>

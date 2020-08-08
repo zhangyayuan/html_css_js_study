@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">只需要一次</div>
+    <script>
+        $(function(){
+            $(".box").one("click",function(){
+                alert("真的自有一次");
+            })
+            // $(".box").on("click",function(){
+            //     alert("真的自有一次");
+            // })
+        })
+    </script>
+</body>
+</html>

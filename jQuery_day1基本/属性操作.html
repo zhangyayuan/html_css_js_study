@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <a href="http://www.baudu.com">百度</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index = "1" data-index="2">ddd</div>
+    <span index = "1" data-index="3">123</span></br>
+    全选<input type="checkbox" class="checkAll"></br>
+    <input type="checkbox" name="" id="" class="j_checkbox">
+    <input type="checkbox" name="" id="" class="j_checkbox">
+    <input type="checkbox" name="" id="" class="j_checkbox"></br>
+    全选<input type="checkbox" class="checkAll"></br>
+    <script>
+        $(function(){
+            //1 获取元素的固有属性 prop(attr) 获取value
+            console.log($("a").prop("href"));//http://www.baudu.com
+
+            //设置 固有属性值
+            $("a").prop("title","baidu");
+            $("input").change(function(){
+                //alert($(this).prop("checked"));
+            })
+            //2 设置获取自定位属性
+            console.log($("div").attr("index"));//1
+           // console.log($("div").prop("data-index"));//undefined
+
+           //3 数据缓存 data(attr,value) 控制台看不见
+            $("span").data("uname","andy"); 
+            console.log($("span").data("uname"));//andu
+            console.log($("span").data("index"))// 3 是取data-index的值
+
+            // 案例
+            $(".checkAll").change(function(){
+                // console.log($(this).prop("checked"));
+                // 并集选择器  选择器大作为
+                $(".j_checkbox,.checkAll").prop("checked",$(this).prop("checked"));
+
+            })
+            $(".j_checkbox").change(function(){
+                // console.log($(this).prop("checked"));
+                // 并集选择器  选择器大作为
+                if($(".j_checkbox:checked").length === $(".j_checkbox").length){
+                     $(".checkAll").prop("checked",true);
+                }else{
+                    $(".checkAll").prop("checked",false);
+                }
+
+            })
+        })
+        
+    </script>
+</body>
+</html>

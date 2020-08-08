@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="" id="btn">
+    <script>
+        // bind() 绑定 捆绑的意思 
+        // 和call() 、 apply() 不同 是不会立即调用指定的函数 直接改变函数this指向
+
+        // var o = {
+        //     name:"andy"
+        // };
+        // function fn(a,b){
+        //     consle.log(this,a,b);
+        // };
+        // var f = fn.bind(o);
+        // f();
+        // 1。 不会调用原来的函数
+        // 2 返回的是原来函数改变this 后产生的心函数
+        // 3 应用 如果有的函数 我们不需要立即调用，但是又想改变函数内部this
+        //  bind() 更常用
+        // 案例 有个一个按钮当我点击后 就禁用 3秒后开启；
+
+        var btn =document.getElementById("btn");
+        btn.onclick = function(){
+            this.disabled = true;
+            // setInterval(function(){
+            //     btn.disabled = false;
+            // },3000)
+            setInterval(function(){
+                this.disabled = false;
+            }.bind(this),3000)
+        }
+
+    </script>
+</body>
+</html>

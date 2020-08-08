@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width:100px;
+            height: 100px;
+            margin:10px;
+            background-color: #ccc;
+            /* display: inline-block; */
+        }
+        .box2{
+            width:100px;
+            height: 100px;
+            margin:10px;
+            background-color: rgb(85, 12, 12);
+            /* display: inline-block; */
+        }
+        /* 垂直外边距合并 问题需要注意 水平外边距不会合并*/
+        .boxson1{
+            margin-top:20px;
+            width:50px;
+            height: 50px;
+            background-color: #453454;
+        }
+        /* 父子  margin 塌陷问题 */
+        /*解决方法1  给父元素定义边框 */
+        /* .box1{
+            height:99px;
+            border:1px solid rgb(0,0,0,0)
+        } */
+        /* 解决方法2 父元素定义上内边距 */
+        /* .box1{
+            padding-top:1px
+        } */
+        /* 解决方法3  overflow:hidden 最佳选择*/
+        .box1{
+            overflow:hidden
+        }
+        *{
+            padding:0;
+            margin: 0;
+        }
+        h1{
+            font-size:24px;
+            font-weight: 400;
+            padding: 0;
+            line-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="boxson1">
+
+        </div>
+    </div>
+    <div class="box2"></div>
+    <h1>水电费</h1>
+    <h2>对方水电费</h2>
+    <h3>水电费</h3>
+    <p>阿鹅鹅鹅</p>
+    <P>额鹅鹅鹅</P>
+    <P>嗯嗯嗯</P>
+    <div>嗯嗯嗯</div>
+    <div>嗯嗯嗯</div>
+    <div>嗯嗯嗯 </div>
+</body>
+</html>

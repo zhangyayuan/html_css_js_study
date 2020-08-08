@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Father{
+            say(){
+                return "father";
+            }
+        }
+        class Son extends Father{
+           say(){
+               console.log(super.say() + " de son");
+                //super.say() 就是调用父类中的普通函数 say()
+           }
+        }
+        var son1 = new Son();
+        son1.say();//father de son
+    </script>
+</body>
+</html>

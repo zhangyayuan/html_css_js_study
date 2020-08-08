@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="test">startt</div>
+    <script>
+
+        // 创建 元素
+        var li = $("<li>eee</li>");
+        var li2 = $("<li>ttt</li>");
+        // 内部添加
+        //子元素后面添加元素
+        $("ul").append(li)//类似原生的appendchild
+        //子元素前面添加元素
+        $("ul").prepend(li2)//
+
+        //外部添加
+        var dv1= $("<div>后面添加</div>");
+        var dv2= $("<div>前面添加</div>");
+        $(".test").after(dv1);
+        $(".test").before(dv2);
+
+        //删除元素
+        $("ul").rermov();//删除本身
+        $("ul").empty();// 删除所有子元素
+        $("ul").html("");//删除所有子元素
+    </script>
+</body>
+</html>

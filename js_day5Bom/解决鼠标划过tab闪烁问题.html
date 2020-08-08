@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id ="btn" value="确定">
+    <script>
+        var btn = document.getElementById("btn");
+        var setT = null;
+        btn.onmouseover = function(){
+            var that = this;
+            setT = setTimeout(function(){
+                that.style.backgroundColor="red";
+            },100)
+            
+        }
+        btn.onmouseout = function(){
+             clearTimeout(setT);//解决闪烁问题
+            this.style.backgroundColor="";
+        }
+    </script>
+</body>
+</html>

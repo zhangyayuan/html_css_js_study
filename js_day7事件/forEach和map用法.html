@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ["zhangsan","lisi","mazi","wanger"];
+        arr.forEach(function(e,i,arr){
+            console.log("元素："+e+"     索引："+i+"    素组："+arr);
+        })
+        //元素：zhangsan   索引：0    素组：zhangsan,lisi,mazi,wanger
+        //元素：lisi       索引：1    素组：zhangsan,lisi,mazi,wanger
+        //元素：mazi       索引：2    素组：zhangsan,lisi,mazi,wanger
+        //元素：wanger     索引：3    素组：zhangsan,lisi,mazi,wanger
+    </script>
+</body>
+</html>

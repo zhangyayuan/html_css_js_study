@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多库共存</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            function $(ele){
+                return document.querySelector(ele);
+            }
+            console.log($("div"));
+            //jQuery.each();
+            var suibian = jQuery.noConflict();
+            console.log(suibian("span"));
+            //suibian.each();
+        })
+    </script>
+    <div></div>
+    <span></span>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  一元运算符
+       // var box =  100;
+      //  ++box; //101 先加后赋值
+      //  alert(box)
+       // var box =  100;
+        //box++;//101 
+        //alert(box);
+        //var box = 100;
+       // var age =  ++box;  //age = 101
+        //var age =  box++;  //age = 100
+        //alert(age)
+
+        //var  age = 100;
+        //alert(-age) // + - 正负
+
+        // var box = 1 + NaN;// NaN
+        // var box = 1 + "100";//1100  +成了字符串连接符
+        // var box ="你的年龄是" + 10 + 20;//你的年龄是1020   先字符串就就是字符串连接符
+        // var box = 10 + 20 + "你的年龄是";//30你的年龄是  先数字加号
+        // var box ="你的年龄是" + (10 + 20);//你的年龄是30  
+        // alert(box)
+
+
+        // var box = 10+{};
+        // alert(typeof box)    //string
+
+
+        // 关系运算符 
+        //var box = 3<2; //false 关系运算符大多数返回 boolean值
+        //alert(box) 
+        //var box = "123" >"22"; //false 比较第一个字符大小 1>2
+         //alert(box)
+       // var box = "a">"b"; //false  98 > 97 比较ASCII码;
+           // alert(box)
+
+        //    var box = false==0; //true
+        //    var box = "2"==2; //true
+        //    var box = 2=={}; //false
+        //    var box = 2==NaN; //false
+        //    var box = {}=={}; //false
+        //    var box = NaN==NaN; //false
+        //    var box = Infinity==Infinity; //true;
+        //    var box = null==0; // false
+        //    var box = !!null==0; // true
+        //    //var box = undefined==0; //false
+        //    alert(box)
+
+        // 逻辑运算符  &&与   ||或  ！非
+           // var box = (4>5)&&(3>2); 
+            //alert(box) //  返回false 
+            // var box = 0&&{};
+            // alert(box) //0
+            // var box = (3>4)&&{};
+            // alert(box) //false
+            // var box = (5>4)&&{};
+            // alert(box) //[object Object]
+
+            // var box = (3>4)&&age;
+            // alert(box) //false 不会执行后面age
+            // var box = (5>4)&&age;
+            //alert(box) //报错
+            // var height;
+            // var age = 8;
+            // var box = age || heigth; // 有一个值 正确就可以赋值 
+            // alert(box)//8
+
+            // var box = !(5>4);  //无论什么数据类型都会返回一个布尔值
+            // alert(box); //false  现将这个值转换成布尔值 然后取反
+            // var box = !null //true
+            // var box = !NaN //true
+            // var box = !undefined //true
+            // var box =100;
+            // box += 100;//200  等价于 box = box+100
+            // alert(box)
+
+            // var box= "";
+            // if(5>4){
+            //     box = "对";
+            // }else{
+            //     box ="错"
+            // }
+            // alert(box)
+            // 三元运算符
+            // var box = 5>4 ?  "对" : "错";
+            // alert(box)
+
+
+            // var age = 10;
+            // var box = 0;
+            // box = age++;
+            // alert(box);
+            // alert(age);
+
+
+            // var e =10;
+            // var b =e++ + ++e;
+            // alert(b);//22
+
+            // var e =10;
+            // var b =++e + e++;
+            // alert(b);
+            // alert(e);
+
+
+            //console.log(0 && 1 + 2&&234 *3455)//0
+            //逻辑中断 
+            // var num =0;
+            // console.log(123 || num++);//123
+            // console.log(num);//0 上一段代码 num++没有执行
+
+
+            var num = 10;
+            num += 5;//自加 num = num + 5
+            num -= 5;//自加 num = num - 5
+            num *= 5;//自加 num = num * 5
+            num %= 5;//自加 num = num % 5
+            num /= 5;//自加 num = num / 5
+            
+    </script>
+</body>
+</html>

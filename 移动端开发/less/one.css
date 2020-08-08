@@ -1,0 +1,21 @@
+div {
+  color: red;
+}
+span {
+  color: color;
+}
+div {
+  width: 100px;
+  height: 100px;
+}
+div span {
+  width: 50px;
+  height: 60px;
+}
+div:hover {
+  background: red;
+}
+div::after {
+  content: "ddd";
+  display: block;
+}

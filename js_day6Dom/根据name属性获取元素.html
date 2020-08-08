@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="老弟" id = "btn">
+    <input type="text" name="name1" id="">
+    <input type="text" name="name2" id="">
+    <input type="text" name="name4" id="">
+    <input type="text" name="name1" id="">
+    <input type="text" name="name5" id="">
+    <input type="text" name="name1" id="">
+    <input type="text" name="name6" id="">
+
+    <script>
+        function my$(id){
+            return document.getElementById(id);
+        }
+        function myName$(name){
+            return document.getElementsByName(name);
+        }
+        my$("btn").onclick = function(){
+            for(var i = 0 ;i< myName$("name1").length;i++){
+                myName$("name1")[i].value = "来了老弟";
+            }
+            
+        }
+    </script>
+</body>
+</html>

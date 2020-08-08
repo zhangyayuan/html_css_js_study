@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="首部添加子元素" id="add">
+    <input type="button" value="首部移除子元素" id="remove">
+    <input type="button" value="移除所有子元素" id="dele">
+    <div id="dv">
+
+    </div>
+    <script>
+        var add= document.getElementById("add");
+        var rem = document.getElementById("remove");
+        var dele = document.getElementById("dele");
+        var dv = document.getElementById("dv");
+        var count =0;
+        add.onclick = function(){
+            count++;
+            var input = document.createElement("input");
+            input.type="button";
+            input.value = "按钮" +count;
+            dv.insertBefore(input,dv.firstElementChild);
+        }
+        rem.onclick = function(){
+            count--;
+            dv.removeChild(dv.firstElementChild);
+        }
+        dele.onclick = function(){
+            count=0;
+            while(dv.firstElementChild){
+                dv.removeChild(dv.firstElementChild);
+            }
+        }
+    </script>
+</body>
+</html>

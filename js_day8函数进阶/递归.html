@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 递归函数： 函数内部自己调用自己这个函数就是递归函数
+        // function fn(){
+        //     console.log("来来来干7杯");
+        //     if(num ===7){
+        //         return;// 递归里面必须加退出条件
+        //     }
+        //     num++;
+        //     fn();
+        // }
+        // fn();
+
+
+
+        //  求1*2*3...*n 阶乘；
+        // var su = 1;   //自己写的有问题
+        // function sum(star,max){
+        //     if(star > max){
+        //        return su
+        //     }
+        //     su = su * star;
+        //     star++;
+        //     rsum(star,max);
+        // }
+        // var sue = sum(1,6);
+        // console.log(sue);
+        // function fn(n){
+        //     if(n ==1){
+        //         return 1;
+        //     }
+        //     return n* fn(n-1);
+        // }
+        // console.log(fn(4));//24
+        //return 4*fn(3)
+        //return 4*(3*f(2))
+        //retrun 4*(3*(2*f(1)))
+        //retrun 4*(3*(2*1))
+
+
+
+    //     function fb(n){
+    //         if(n == 1 || n===2){
+    //             return 1;
+    //         }
+    //         return fb(n-1)+fb(n-2);
+    //     }
+    //    // console.log(fb(1));
+    //     //console.log(fb(2));
+    //     console.log(fb(3));
+    //     console.log(fb(4));
+    //     console.log(fb(5));
+    //     console.log(fb(6));
+
+
+    // 1.利用forEach 去遍历里面每一个元素；
+    var data = [{
+        id:1,
+        name: "zhang",
+        group:[{
+            id:11,
+            name:"lee",
+            group:[{
+                id:123,
+                name:"yyy"
+            }]
+        },{
+            id:22,
+            name:"kaa"
+        }]
+    },{
+        id:2,
+        name:"ddd"
+
+    }];
+    function getId(data,dd){
+        var o = {};
+         data.forEach(function(item){
+            if(item.id == dd){
+                o = item;
+                return item;
+            }else if(item.group && item.group.length>0){
+                o = getId(item.group,dd);
+            }
+        })
+        return o;
+    }
+    console.log(getId(data,123));
+    </script>
+</body>
+</html>

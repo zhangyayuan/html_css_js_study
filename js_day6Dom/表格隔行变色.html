@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color:palegreen;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" >
+        <thead>
+        </thead>
+        <tbody>
+            <tr><td>eeee</td><td>56756</td></tr>
+            <tr><td>eeee</td><td>56756</td></tr>
+            <tr><td>eeee</td><td>56756</td></tr>
+            <tr><td>eeee</td><td>56756</td></tr>
+            <tr><td>eeee</td><td>56756</td></tr>
+            <tr><td>eeee</td><td>56756</td></tr>
+            <tr><td>eeee</td><td>56756</td></tr>
+        </tbody>
+    </table>
+    <script>
+        var trs = document.querySelector("tbody").querySelectorAll("tr");
+        for(var i = 0;i<trs.length;i++){
+            trs[i].onmouseover = function (){
+                this.className = 'bg';
+            }
+            trs[i].onmouseout = function (){
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+</html>

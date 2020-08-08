@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- <table border = "1" width ="300">
+        <caption>人员表</caption>
+        <thead>
+            <tr>
+                <td>张三</td>
+                <td>43</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>43</td>
+                <td>男</td>
+            </tr>
+        </thead>
+    </table> -->
+    <script>
+        window.onload = function  (){
+            var tab = document.createElement("table");
+            tab.width = 300;
+            tab.border = 1;
+            var caption = document.createElement("caption");
+            caption.innerHTML = "人员表"
+            tab.appendChild(caption);
+            var thead = document.createElement("thead");
+            tab.appendChild(thead);
+            var tr = document.createElement("tr");
+            tr.style ="text-align:center";
+            thead.appendChild(tr);
+            var td1 = document.createElement("td");
+            td1.innerHTML ="数据1";
+            tr.appendChild(td1);
+            var td2 = document.createElement("td");
+            td2.innerHTML ="数据2";
+            tr.appendChild(td2);
+            document.body.appendChild(tab);
+        }
+    </script>
+</body>
+</html>

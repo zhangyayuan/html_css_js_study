@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 移动盒子的位置：定位 盒子外边距 2d转换移动 */
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        div{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* transform:translate(100px,100px); */
+            /* transform:translateX(100px);
+            transform:translateY(100px) */
+            /* 不影响其他元素的 位置 */
+            /* transition: transform 1s ease 1s; */
+        }
+        /* div:first-child:hover{
+            transform:translate(50%,50%)
+        } */
+        /* transform  translate 参数  百分号 是盒子自身的宽度和高度对比 */
+        /* div:last-child{
+            background-color: red;
+        } */
+        /* translate 对行内元素是无效的 */
+        p{  
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate3d(-50%,-50%,10px);
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 2D 转换 -->
+    <!-- <div class="box"></div>
+    <div></div> -->
+    <div>
+        <p></p>
+    </div>
+</body>
+</html>

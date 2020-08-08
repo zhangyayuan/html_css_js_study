@@ -1,0 +1,23 @@
+{
+  "id": "1735914",
+  "name": "iconfont",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12382565",
+      "name": "yiyuanguanli",
+      "font_class": "yiyuanguanli",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "12382570",
+      "name": "yonghuguanli",
+      "font_class": "yonghuguanli",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    }
+  ]
+}

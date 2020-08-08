@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #box {
+            position: relative;
+            width: 600px;
+            height: 350px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 30px;
+            margin-top: -15px;
+            background-color: rgb(0, 0, 0, .5);
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .tab_list {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            margin-left: -36px;
+            margin-bottom: 20px;
+            ;
+            width: 72px;
+
+        }
+
+        .tab_list ul {
+            overflow: hidden;
+        }
+
+        .tab_list ul li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        .tab_items {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .tab_items ul {
+            overflow: hidden;
+            width: 4200px;
+            height: 350px;
+        }
+
+        .tab_items ul li {
+            float: left;
+        }
+
+        .tab_items ul li img {
+            width: 600px;
+            height: 350px;
+        }
+
+        .tab_list ul .current {
+            background-color: rgb(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+
+        <div class="tab_items" id="tab_items">
+            <ul>
+                <li><img src="images/1.jpg" alt=""></li>
+                <li><img src="images/2.jpg" alt=""></li>
+                <li><img src="images/3.jpg" alt=""></li>
+                <li><img src="images/4.jpg" alt=""></li>
+                <li><img src="images/5.jpg" alt=""></li>
+                <li><img src="images/6.jpg" alt=""></li>
+                <li><img src="images/1.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="prev">
+            &gt;</div>
+                <div class="next">&lt;</div>
+                <div class="tab_list" id="tab_list">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+        </div>
+        <script>
+            var box = document.getElementById("box");
+            var prev = document.getElementsByClassName("prev")[0];
+            var next = document.getElementsByClassName("next")[0];
+            var tab_items = document.getElementById("tab_items");
+            var tab_list = document.getElementById("tab_list");
+            var items_arr = tab_items.firstElementChild.children;
+            var li_arr = tab_list.firstElementChild.children;
+            var index = 0;
+            var offsetWidth = box.offsetWidth;
+            li_arr[0].className = "current";
+            var setT = setInterval(loop, 2000);
+            prev.onclick = function () {
+                clearInterval(setT);
+                loop();
+            }
+            box.addEventListener("mouseover",function(){
+                clearInterval(setT);
+            },false);
+            box.addEventListener("mouseout",function(){
+                setT = setInterval(loop, 2000)
+            },false);
+            next.onclick = function () {
+                clearInterval(setT);
+                for (var i = 0; i < li_arr.length; i++) {
+                    li_arr[i].className = ""
+                }
+                if (index == 0) {
+                    tab_items.style.left = -6 * offsetWidth + "px";
+                    li_arr[5].className = "current";
+                    index = 6;
+                }
+                index--;
+                li_arr[index].className = "current";
+                animation(tab_items, -index * offsetWidth);
+            }
+            for (var i = 0; i < li_arr.length; i++) {
+                li_arr[i].index = i;
+                li_arr[i].onmouseover = function () {
+                    for (var i = 0; i < li_arr.length; i++) {
+                        li_arr[i].className = ""
+                    }
+                    this.className = "current";
+                    tab_items.style.left = -this.index * offsetWidth + "px";
+                    index = this.index;
+                }
+            };
+            function loop() {
+                for (var i = 0; i < li_arr.length; i++) {
+                    li_arr[i].className = ""
+                }
+                if (index >= items_arr.length - 1) {
+                    tab_items.style.left = 0;
+                    li_arr[1].className = "current";
+                    index = 0;
+                }
+                index++;
+                if (index != 6) {
+                    li_arr[index].className = "current";
+                } else {
+                    li_arr[0].className = "current";
+                }
+                animation(tab_items, -index * offsetWidth);
+            }
+            function animation(ele, target) {
+                if (ele.setT) {
+                    clearInterval(ele.setT);
+                }
+                ele.setT = setInterval(function () {
+                    var tep = 10;
+                    var current = ele.offsetLeft;
+                    tep = target > current ? tep : -tep;
+                    current += tep;
+                    if (Math.abs(target - current) >= 10) {
+                        ele.style.left = current + "px";
+                    } else {
+                        clearInterval(ele.setT);
+                        ele.style.left = target + "px";
+                    }
+                }, 10)
+            }
+        </script>
+</body>
+
+</html>

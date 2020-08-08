@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom基础</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            //var box = document.getElementById("box").innerHTML;
+            //alert(box);
+            // var box = document.querySelector(".box");//<div id="box" class ="box">打我呀</div>
+            // /// 选择器加符号 返回第一个元素
+            // var box1 = document.querySelectorAll(".box");//[div#box.box, div#box2.box]
+            //var body = document.body;
+            //var htmlEle = document.documentElement;//返回html 对象
+
+
+
+            // var btn1 = document.getElementById("btn1");
+            // var btn2 = document.getElementById("btn2");
+            // var img = document.getElementById("img");
+            // btn1.onclick = function (){
+            //     img.src = "images/lione.jpg";
+            //     img.title = "狮子";
+            // }
+            // btn2.onclick = function (){
+            //     img.src = "images/taiger.jpg";
+            //     img.title = "老虎" ;
+            // }
+
+        var box = document.getElementById("box");
+        var img = document.querySelector("img");
+        var date = new Date();
+        var hours = date.getHours();
+        if(hours <= 12){
+            box.innerHTML = "上午好";
+            img.src = "images/lione.jpg";
+        }else if(hours>12 && hours <= 18){
+            box.innerHTML = "下午好";
+            img.src = "images/taiger.jpg";
+        }else{
+            box.innerHTML = "晚上好";
+        }
+    }
+    </script>
+
+    <!-- <div id="box" class ="box">打我呀</div>
+    <div id="box2" class ="box">不要打我</div>
+    <input type="text" name = "name"> -->
+
+
+    <!-- <button id = "btn1">狮子</button>
+    <button id = "btn2">老虎</button><br/>
+    <img src="images/lione.jpg" alt="" id = "img" title = "狮子"> -->
+
+    <img src = "" alt="" >
+    <div id="box"></div>
+</body>
+</html>

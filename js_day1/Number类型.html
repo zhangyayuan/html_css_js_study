@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var box = 250;// 十进制
+
+        var box = 070;// 八进制
+
+        var box = 0x1f;// 十六进制
+
+        var box = 3.8;// 浮点型
+
+        var box = 4.12e9;//box = 4120000000  科学计数法 指数次幂
+
+        var box = 0.0000000024;// 2.4e-9
+        //alert(box) // 十进制的返回
+
+       // alert(parseInt("456Lee")); //456  parseInt() 只能字符串转数字
+        //alert(parseInt("Lee456Lee"));//NaN
+        //alert(parseInt("12pp456Lee")); //12
+       // alert(parseInt("56.12")); //56
+        //alert(parseInt("")); //NaN
+       // alert(parseInt("0xA")); //10  把十六进制转化成十进制  
+        // alert(parseInt('070',8)); //10  把8进制转化成十进制  
+        // alert(parseInt("0xALee")); //10  把8进制转化成十进制  
+        // alert(parseFloat("0xALee"))//0 parseFloat 不认识十六进制
+        //alert(parseFloat("5.2752ttt"));//5.2752 保留小数点
+
+        // if(isNaN("11r")){
+        //     alert("不是数字");
+        // }else{
+        //     alert("是数字");
+        // }
+
+        //alert(parseInt("dd123lll"))//NaN
+
+        //利用运算符 隐式转换 - * /
+        var tim = prompt("请输入出生年份",1999);
+        var data = new Date();
+        alert("你" + (data.getFullYear()-parseInt(tim)) +"岁了！");
+    </script>
+</body>
+</html>

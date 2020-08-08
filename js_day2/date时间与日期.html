@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间日期</title>
+</head>
+<body>
+    <script>
+       // var box = new Date(); //创建一个日期对象 构造方法里面可以传参数 ，指定时间
+        //alert(box);
+       //alert(Date.parse("2/04/2020"));// 1580745600000 毫秒数 
+        // var box = new Date(Date.parse("2/04/2020")) ;
+        // var box1 = new Date(1580745600000) ;
+        // var box2 = new Date("2/04/2020") ;
+        //alert(box);// Tue Feb 04 2020 00:00:00 GMT+0800 (中国标准时间)毫秒数 
+        //alert(box1);//Tue Feb 04 2020 00:00:00 GMT+0800 (中国标准时间)
+        //alert(box2);// Tue Feb 04 2020 00:00:00 GMT+0800 (中国标准时间)
+
+
+        //var box = new Date("February 1,2008");
+        //alert(box);//Fri Feb 01 2008 00:00:00 GMT+0800 (中国标准时间)
+        
+        // var box = new Date(Date.UTC(2007,10,15,17,22,45,15)); //根据世界协调时间计算  加上了 8个小时
+        // alert(box);//Fri Nov 16 2007 01:22:45 GMT+0800 (中国标准时间)
+
+        /*   通用方法*/
+        // var box = new Date(2007,10,15,17,22,45,15);
+        // alert(box);// hu Nov 15 2007 17:22:45 GMT+0800 (中国标准时间)
+        // alert(box.valueOf());//1195118565015
+        // alert(box.toString());//Thu Nov 15 2007 17:22:45 GMT+0800 (中国标准时间)
+        // alert(box.toLocaleString());//2007/11/15 下午5:22:45
+
+        // var box = new Date();
+        // alert(box.toLocaleString());//
+
+ //var  box = new Date();
+         //alert(box.toDateString());//Wed Apr 15 2020
+        // alert(box.toTimeString());//15:14:41 GMT+0800 (中国标准时间)
+       // alert(box.toLocaleDateString());//2020/4/15
+        // alert(box.toLocaleTimeString());//下午3:14:41
+        // alert(box.toUTCString());//Wed, 15 Apr 2020 07:14:41 GMT
+    //     alert(box.getTime());//1586935754736 和 valueOf() 相同
+    //    // alert(box.setTime(100));//100
+    //     alert(box.getFullYear());//2020
+    //    // alert(box.setFullYear(2012))
+    //     alert(box.getMonth());//3 比实际月份要小1
+    //    // alert(box.setMonth(11));
+    //     alert(box.getDate());//15 
+    //    // alert(box.setDate(8));
+    //     alert(box.getDay());//3 星期三
+    //     //alert(box.setDay(2));
+    //     alert(box.getHours());//15
+    //     //alert(box.setHours(12));
+    //     alert(box.getMinutes());//48
+    //     //alert(box.setMinutes(24));
+    //     alert(box.getSeconds());//9
+    //    // alert(box.setSeconds(17));
+    //     alert(box.getMilliseconds());//177
+    //     //alert(box.setMilliseconds());
+    //     alert(box.getTimezoneOffset());//-480
+    //     var box = new Date();
+    //     alert(box.getFullYear()+"-"+(box.getMonth()+1)+"-"+ box.getDate()+" "+box.getHours()+":" +box.getMinutes()+":"+box.getSeconds());
+
+    function getD(){
+        var  box = new Date();
+        var arr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        return "今天是"+box.getFullYear() + "年" +(box.getMonth()+1) +"月" + box.getDate() + "日" +arr[box.getDay()]
+    }
+    function getT(){
+        var box = new Date();
+        return (box.getHours() < 10 ? ("0" +box.getHours()) : box.getHours()) + ":" + (box.getMinutes() < 10 ? ("0" +box.getMinutes()) : box.getMinutes()) + ":" + (box.getSeconds() < 10 ? ("0" +box.getSeconds()) : box.getSeconds());
+    } //返回 小时 ： 分钟 ：秒
+    // console.log(getD());
+    // console.log(getT());
+    // console.log(Date.now());
+     function countDown(time){
+        var nowTime = +new Date();
+        var userTime =  +new Date(time);
+        var times =(userTime - nowTime)/1000;
+        var d = parseInt(times/60/60/24);
+        var h = parseInt(times/60/60%24);
+        var m = parseInt(times/60%60);
+        var s = parseInt(times%60);
+        if(isNaN(times) || times <= 0 ){
+            return alert("请输入正确的时间");
+        }else{
+            return "还剩下" + (d < 10 ? ("0" +d) : d) + "天" + (h < 10 ? ("0" +h) : h) + "小时" + (m < 10 ? ("0" +m) : m) + "分钟" + (s < 10 ? ("0" +s) : s) + "秒";
+        }
+     }
+
+   console.log(count("2020-4-23"));
+</script>
+</body>
+</html>

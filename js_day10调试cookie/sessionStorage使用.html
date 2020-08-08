@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessitonStorage</title>
+</head>
+<body>
+    
+    <input type="text" name="uname" id="txt">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class = "del">清除空所有数据</button>
+    <script>
+        // window.sessionStorage 生命周期 为关闭 浏览器窗口
+        var text = document.getElementById("txt");
+        var set = document.querySelector(".set");
+        var get = document.querySelector(".get");
+        var remove= document.querySelector(".remove");
+        var del = document.querySelector(".del");
+        set.addEventListener("click",function(){
+            var val = text.value;
+            sessionStorage.setItem("uname",val);
+            sessionStorage.setItem("passwprd","ddd");
+        });
+        get.addEventListener("click",function(){
+            var text = sessionStorage.getItem("uname");
+            alert(text);
+        });
+        remove.addEventListener("click",function(){
+            sessionStorage.removeItem("uname");
+        });
+        del.addEventListener("click",function(){
+            sessionStorage.clear();
+        })
+    </script>
+</body>
+</html>

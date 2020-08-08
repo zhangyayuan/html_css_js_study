@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            /* position:absolute;
+            top:0; */
+            left:100px;
+            height: 100px;
+            width:100px;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        console.log(box.offsetLeft); // 0 
+        console.log(window.getComputedStyle(box,null).left);//100px
+
+        // box 没有设置position 但是设置了left  offsetLeft 的实际值 
+        // getComputeStyle  是设置的Left值
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历 创建 添加 删除 元素操作</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <script>
+        $(function(){
+            //遍历 创建 添加 删除 元素操作
+
+            // 遍历 each()
+            var arr = ["red","blue","yellow"];
+            var sum = 0;
+            // $("div").each(function(index,domEle){
+            //     // console.log(index);
+            //     // console.log(domEle);//返回原生js的元素对象
+            //     //$(demEle)转换成jQuery对象
+            //     $(domEle).css("background-color",arr[index]);
+            //     sum += parseInt($(domEle).text());
+
+            // })
+
+            // $.each() 主要做数据处理
+            $.each($("div"),function(i,d){
+                $(d).css("background-color",arr[i]);
+                sum += parseInt($(d).text());
+            })
+            console.log(sum)
+
+            $.each(arr,function(i,e){
+                console.log(i);//0  1  2
+                console.log(e);//"red","blue","yellow"
+            })
+
+            var obj = {
+                name:"zhang",
+                age:18
+            }
+            $.each(obj,function(i,e){
+                console.log(i);//name
+                console.log(e);//zhang
+            })
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map{
+            position:relative;
+            height: 400px;
+            width: 400px;
+            background-color: #666;
+            margin: 100px auto;
+        }
+      
+        .city{
+            position: absolute;
+            top:20px;
+            right: 20px;
+        }
+        .one{
+            height: 5px;
+            width: 5px;
+            background-color:aqua;
+            border-radius: 50%;
+        }
+        .city div[class^="pluse"]{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            box-shadow:0 0 5px aqua;
+        }
+        .pluse1{
+            animation: move 1.8s linear 0s infinite normal backwards;
+        }
+        .pluse2{
+            animation: move 1.8s linear 0.6s infinite normal backwards;
+        }
+        .pluse3{
+            animation: move 1.8s linear 1.2s infinite normal forwards;
+        }
+        @keyframes move{
+            0%{
+                
+            }
+            70%{
+               width: 40px;
+               height: 40px;
+               opacity: 1;
+            }
+           100%{
+               width: 70px;
+               height: 70px;
+               opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="one"></div>
+            <div class="pluse1"></div>
+            <div class="pluse2"></div>
+            <div class="pluse3"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器对象模型</title>
+    <script>
+        window.onload = function (){
+         //    console.log(window.innerWidth);
+         //    console.log(window.innerHeight);
+         //    console.log(window.outerWidth);
+         //    console.log(window.outerHeight);
+             var time1 = setTimeout(function(){
+                 console.log("zhang");
+             },2000)
+             var time2 = setTimeout(function(){
+                 console.log("zhang");
+             },5000)
+             var time3 = setTimeout(function(){
+                 console.log("zhang");
+             },7000);
+            function ch(){
+                 clearTimeout(time2);
+            } 
+            var btn = document.getElementById("btn");
+            btn.onclick =  function (){
+                ch();
+            }
+        }
+     </script>
+</head>
+<body>
+    <div>
+        <!-- window  对象
+
+        location 对象
+
+        history 对象
+
+
+        window 底下有六个属性 且都是对象
+        document  frames   history   location  navigator  screen
+
+        而document 底下也有5个属性且都是对象
+        anchors   forms   images links  location -->
+
+            <input type="button" id = "btn" value="取消">
+    </div>
+    <script>
+        // window的属性和方法的调用 window. window.() 
+        //系统对话框
+        //window.alert("警告框 ");//只有确定没有取消
+        //window.confirm("好页");//返回boolean 值  点击确定返回true
+
+        // if(confirm("选择")){
+        //     alert("你按了确定按钮");
+
+        // } else{
+        //     alert("你按了取消按钮");
+        // }
+        // var box = window.prompt("请输入一个数字",0);//返回输入值 第二个参数是默认值
+        // if(box != null){
+        //     alert(box);
+        // }
+
+
+        // defaultStatus = "状态栏默认文本";
+        // status = "状态栏文本";
+      // var box =  open("opener.html","baidu","width=400,top:100,height=400,left=100");
+            //box.alert("Lee"); 
+            // var box = "eee";
+            // console.log(box);
+            // console.log(window.box);
+
+            
+    </script>
+    
+</body>
+</html>

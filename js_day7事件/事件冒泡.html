@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            height:100px;
+            width:100px;
+            background-color:red;
+        }
+
+        #box2{
+            height:80px;
+            width:80px;
+            background-color:blue;
+        }
+        #box3{
+            height:60px;
+            width:60px;
+            background-color:orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2"><div id="box3"></div></div>
+        
+    </div>
+    <script>
+        var box3 = document.getElementById("box3");
+        var box2 = document.getElementById("box2");
+        var box1 = document.getElementById("box1");
+        // box1.onclick = function(e){
+        //     alert("zhang1");
+        //     //e.stopPropagation();
+        // }
+        // box2.onclick = function(e){
+        //     alert("zhang2");
+        //     //e.cancelBubble = true;
+        // }
+        // box3.onclick = function(e){
+        //     alert("zhang3");
+        //     //e.stopPropagation();
+        //     //window.event.cancelBubble = true;// ie8
+        // }
+        function f1(e){
+            return alert("zhang"+"=="+this.id +"=="+ e.eventPhase );
+        }
+        box1.addEventListener("click",f1,false);//true 捕获 false 冒泡
+        box2.addEventListener("click",f1,false);
+        box3.addEventListener("click",f1,false);
+        //事件捕获 : 从外向里
+        //事件冒泡: 从里向外
+        //e.eventPhase  值有 1 2 3
+        //1 事件捕获阶段；
+        //2 事件目标阶段
+        //3 事件冒泡阶段
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+<script>
+    // 扩展运算符可以将数组拆分成逗号分隔的参数序列
+    // let ary =["a","b","c"];
+    // console.log(...ary);//a b c
+    // console.log("a","b","c");//a b c
+
+
+    // 合并数组
+
+    // let arr1 = [1,2,3];
+    // let arr2 = [11,22,33];
+    // let arr3 = [...arr1,...arr2];
+    // console.log(arr3);//[1, 2, 3, 11, 22, 33]
+
+    // let arr1 = [1,2,3];
+    // let arr2 = [11,22,33];
+    // arr1.push(...arr2);
+    // console.log(arr1);//[1, 2, 3, 11, 22, 33]
+
+    // 伪数组转换成真数组
+    let oDivs = document.getElementsByTagName("div");
+    console.log(oDivs);//HTMLCollection(5) [div, div, div, div, div]
+    oDivs = [...oDivs];
+    console.log(oDivs);//[div, div, div, div, div]
+</script>
+</body>
+</html>

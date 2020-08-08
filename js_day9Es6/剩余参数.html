@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 剩余参数语法允许我们将不一定数量的参数表示为一个数组
+    //     const sum = (...arr)=>{//...代表...arr 是数组必须有
+    //         let total = 0;
+    //         arr.forEach(item =>{
+    //             total += item;
+    //         })
+    //         return total;
+    //     }
+    //    console.log(sum(10,20));//30
+    //    console.log(sum(10,20,30));//60
+
+    //    const sum = (dd,...args)=>{//...args 不能更改
+    //         console.log(dd);//10
+    //         console.log(args);//[20,30]
+            
+    //     }
+    //    sum(10,20,30);
+
+
+    // 剩余参数和解构配合使用
+    // let  student = ["wangwu","zhangsan","lis"];
+    // let [s1,...s2] =student;
+    // console.log(s1);//"wangwu"
+    // console.log(s2);// ["zhangsan", "lis"]
+    </script>
+</body>
+</html>

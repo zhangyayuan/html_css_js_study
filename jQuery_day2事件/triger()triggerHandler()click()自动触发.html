@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动触发事件</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="own">ddddd</div>
+    <script>
+        //元素.事件()
+        $(function(){
+            $(".own").on("click",function(){
+                alert("来了，老弟！");
+            });
+            //1 click()
+            //$(".own").click();
+
+            //2 trigger();
+            //$(".own").trigger("click");
+
+
+            //3 triggerHandler()// 不会触发元素的默认行为
+            $(".own").triggerHandler("click");
+        })
+    </script>
+</body>
+</html>

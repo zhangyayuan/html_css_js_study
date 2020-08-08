@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration:none;
+}
+ul li{
+    list-style: none;
+}
+.practice{
+    width: 100px;
+    height: 20px;
+    border:1px solid black;
+    border-radius: 10px 5px 30px 15px ;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(155, 125, 125, 0.8);
+    margin:100px auto;
+    font-weight: 700;
+    text-shadow: 5px 5px 6px black;
+   
+}
+.box:hover{
+    box-shadow: 10px 10px 50px 11px rgb(0,0,0,0.5) ;
+}
+
+.box2 {
+    margin:0 50px;
+}
+.float1{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    float: left;
+
+}
+.float2{
+    background-color: #673454;
+    height: 200px;
+    width: 100px;
+    float: right;
+    
+}
+.float3{
+    background-color: #365663;
+    /* width: 400px; */
+    height: 100px;
+    clear: both;
+}
+.nav{
+    width:1200px;
+    height:110px;
+    background-color: pink;
+    margin:0 auto;
+}
+.sidebar{
+    width:230px ;
+    height:100%;
+    background-color: #ccc;
+    float: left;
+}
+.rightcontent{
+    width: 970px;
+    height:100%;
+    background-color: blue;
+    float: left;
+}
+.product{
+    width:100px;
+    height:100px;
+    background-color: red;
+    /* clear: both; */
+}
+.product2{
+    width:1226px;
+    height:285px;
+    background-color: blue;
+    margin:0 auto
+}
+.product2 li{
+    width:296px;
+    height:100%;
+    background-color: #f55333;
+    float:left;
+    margin-right:14px;
+    
+}
+.product2 .last{
+    margin-right:0px
+}
+.test1 {
+    width:100px;
+    height: 100px;
+    background-color: #345456;
+}
+.test2 {
+    width:100px;
+    height: 100px;
+    background-color: #124576;
+    float:left
+}
+
+.test3 {
+    width:100px;
+    height: 100px;
+    background-color: #769544;
+}
+.test4 {
+    width:100px;
+    height: 100px;
+    background-color: #152004;
+}
+.clear{
+    background-color: #785456;
+    /* border-left:1px solid b*/
+    /* overflow:hidden */
+    /* 父级添加overflow: hidden */
+} 
+.clear:before,.clear:after{/*伪元素 清除浮动*/
+    content:"";
+    display:block;
+    height:0;
+    clear: both;
+    visibility: hidden;
+}
+/* 百度等大公司常用清除浮动方法 */
+.clear div{
+    width:100px;
+    height:100px;
+    background-color: #874597;
+    float:left;
+    margin-left:100px;
+    *zoom: 1;
+}
+
+.bra{
+    height: 100px;
+    background-color: #399933;
+    /* clear: both; */
+}
+.last{
+    clear: both;
+}

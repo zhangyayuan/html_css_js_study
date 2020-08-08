@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击确定" id="btn"/>
+    <script>
+        var inp = document.getElementById("btn");
+        inp.onclick = function (){
+            console.log("第一次哦");
+        }
+        if(typeof inp.onclick =="function"){
+            var saved = null;
+            saved = inp.onclick;
+        }
+        inp.onclick = function(){
+            if(inp.onclick)saved()
+            console.log("第二次哦");
+        }
+    </script>
+</body>
+</html>

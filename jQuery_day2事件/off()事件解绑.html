@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .box{
+            width:200px;
+            height:200px;
+            background-color: cadetblue;
+        }
+        .current{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <ul>
+        <li>wwerer1</li>
+        <li>wwerer2</li>
+        <li>wwerer3</li>
+        <li>wwerer4</li>
+    </ul>
+    <script>
+        $(function(){
+            // $(".box").on({///
+            //     mouseenter:function(){
+            //         $(this).css("background-color","red");
+            //     },
+            //     click:function(){
+            //         $(this).css("background-color","blue");
+            //     },
+            //     mouseleave:function(){
+            //         $(this).css("background-color","cadetblue");
+            //     }
+            // })
+            $(".box").on("mouseenter mouseleave",function(){
+                $(this).toggleClass("current");
+
+            })
+
+            // on() 事件委托
+            $("ul").on("click","li",function(){
+
+            })
+
+            //on() 动态创建元素绑定事件
+            $("ul").on("click","li",function(){
+
+            })
+
+            //off();事件解绑
+            //$(".box").off();
+            //$(".box").off("mouseenter");//解除某一个事件
+            $("ul").off("click","li",function(){//解除事件委托
+
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+    <div id="box"></div>
+<body>
+    <!-- <input type="text" value="" id="age">
+    <input type="button" onclick="an()" id="button1" value="查看我的年龄阶段"> -->
+    <!-- <button  id="btn" onclick="plan()">今天计划</button> -->
+   <!-- <button onclick="monney()">我有多少</button> -->
+
+   <script>
+    // function an() {
+    //     var age = document.getElementById("age").value;
+    //     if (age <= 44) {
+    //         alert("青年");
+    //     } else if (age >= 45 && age <= 59) {
+    //         alert("中年");
+    //     } else if (age >= 60 && age <= 89) {
+    //         alert("老年");
+    //     } else if (age >= 90) {
+    //         alert("长寿老人");
+    //     }
+    // }
+    // function plan(){
+    //     var day_numb = new Date().getDay();
+    //     switch(day_numb){
+    //         case 1:
+    //             alert("今天周一,学习理念知识");
+    //             break;
+    //         case 2:
+    //             alert("今天周二,学习理念知识");
+    //             break;
+    //         case 3:
+    //             alert("今天周三,企业实践");
+    //             break;
+    //         case 4:
+    //             alert("今天周四,企业实践");
+    //             break;
+    //         case 5:
+    //             alert("今天周五,总结经验");
+    //             break;
+    //         case 6:
+    //             alert("今天周六,休闲娱乐");
+    //             break;
+    //         case 7:
+    //             alert("今天周七,休闲娱乐");
+    //             break;
+    //     }
+    // }
+
+    // function monney(){
+    //     var y=0;
+    //     for(var x=1;x<=5;x++){
+    //         y = y+x;
+
+    //     }
+
+    //     document.write("我们一共有:"+y);
+    // }
+    //  var qiu1 = 1;
+    //  function  monney(){
+    //      while(qiu1<=6){
+    //          alert("第"+qiu1+"个球");
+    //          qiu1++;
+    //      }
+    //  }
+
+    // var num2 = new Array(60,70,80,10,20,130,10,10,30);
+    // for(var r=0;r<num2.length;r++){
+    //     if(num2[r]<60){
+    //         alert("不及格我不看了");
+    //         continue;
+    //     }
+    //     alert(num2[r])
+    // }
+
+    // var arr = new Array();
+    // arr[0] = new Array ('小A','女',21,'大一');
+    // arr[1] = new Array ('小B','男',23,'大三');
+    // arr[2] = new Array ('小C','男',24,'大四');
+    // arr[3] = new Array ('小D','女',21,'大一');
+    // arr[4] = new Array ('小E','女',22,'大四');
+    // arr[5] = new Array ('小F','男',21,'大一');
+    // arr[6] = new Array ('小G','女',22,'大二');
+    // arr[7] = new Array ('小H','女',20,'大三');
+    // arr[8] = new Array ('小I','女',20,'大一');
+    // arr[9] = new Array ('小J','男',20,'大三');
+    // for(var r=0;r<arr.length;r++){
+    //     alert("eee");
+    //     if(arr[r][1]=="女" && arr[r][3] == "大一"){
+    //         document.write(arr[r][0]+"<br/>")
+    //     }
+    // }
+    // var score = new Array("小王", 50, "小刘", 90, "小李", 40, "小白", 70);
+    // var fail_name = "";
+    // var pass_name = "";
+    // var sum = 0;
+    // for (var index in score) {
+    //     if (index % 2 == 1) {
+    //         if (score[index] < 60) {
+    //             fail_name += score[index - 1] + " ";
+    //         } else {
+    //             pass_name += score[index - 1] + " ";
+    //         }
+    //         sum += score[index];
+    //     }
+    // }
+    // document.write("不及格：" + fail_name + "<br/>");
+    // document.write("及格：" + pass_name + "<br/>");
+    // document.write("平均分：" + sum / (score.length / 2))
+
+    //闰年还是平年 
+    // var year  = prompt("请输入年份");
+    //     if(year%4 ==0 && year%100 !=0 || year%400 == 0){
+    //         alert("闰年");
+    //     }else{
+    //         alert("平年");
+    //     }
+
+
+    //  水果
+
+    // var str = prompt("请输入水果");
+    //     switch(str){
+    //         case "苹果":
+    //             alert("有");
+    //             break;
+    //         case "梨":
+    //             alert("有");
+    //             break;
+    //         case "橘子":
+    //             alert("有");
+    //             break;
+    //         case "西瓜":
+    //             alert("有");
+    //             break;
+    //             default:
+    //                 alert("没有");
+    //     }
+
+
+    // 从1-100 整数的累加和
+    // var sum = 0;
+    // for(var i = 1; i<=100;i++){
+    //     sum += i;
+    // }
+    // alert(sum);
+
+    // var par = 0;
+    // for(var i = 1;i <= 100;i++){
+    //     par += i;
+    // }
+    // console.log(par/100);//50.5
+
+    // var evenNum = 0,oddNum = 0;
+    // for(var i = 1;i <= 100;i++){
+    //     if(i%2==1){
+    //         oddNum += i;
+    //     }else{
+    //         evenNum += i;
+    //     }
+    // }
+    // console.log(oddNum);//2500
+    // console.log(evenNum);//2550
+    // var remNum = 0;
+    // for(var i = 1;i <=100;i++){
+    //     if(i%3 ==0){
+    //         remNum += i;
+    //     }
+    // }
+    // console.log(remNum);1683
+
+
+
+
+    // var str ="";
+    // for(var i = 1;i <= 5;i++){
+    //     str +="☆";
+    // }
+    // console.log(str);
+
+
+    // 五行五列"☆"
+   
+    // for(var i = 1;i <= 5;i++){
+    //     var str = "";
+    //     for(var j = 1; j <=5;j++){
+    //         str +="☆";
+    //     }
+    // document.write(str);
+    // document.write("<br/>");
+
+    // }
+   
+
+    // 用户输入多少就多少
+    // var rows = prompt("请你输入行数",5);
+    // var cols = prompt("请你输入列数",5);
+    // for(var i=1;i<=rows;i++){
+    //     var str = "";
+    //     for(var j = 1; j <=cols;j++){
+    //         str +="☆";
+    //     }
+    //     document.write(str);
+    //     document.write("<br/>");
+    // }
+    // for(var i=1;i<10;i++){
+    //     var str = "";
+    //     for(var j = 1;j <= 10-i;j++){
+    //         str +="☆";
+    //     }
+    //     document.write(str);
+    //     document.write("<br/>");
+    // }
+    // var box = document.getElementById("box");
+    // for(var i = 1; i<=9;i++){
+    //     var str = "";
+    //     for(var j = 1;j<=i;j++){
+    //         str = j + "×" + i + "=" + i * j;
+    //         var span = document.createElement("span");
+    //         span.style ="text-align:center;margin-bottom:5px;color:#fff;display:inline-block;width:80px;margin-left:5px;background-color:grey";
+    //         span.innerHTML = str;
+    //         box.appendChild(span);
+    //     }
+    //     var br = document.createElement("br");
+    //     box.appendChild(br);
+    // }
+
+    // 数组中的 最大值 
+    // var arr = [244,5,8,9,11,24,2,8,91,0,1,21,];max = arr[0];
+    // for(var i = 1; i<arr.length;i++){
+    //     if(arr[i]>max){
+    //         max = arr[i];
+    //     }
+    // }
+    // alert(max);
+
+    // var arr1 = [244,5,8,9,11,24,2,8,91,0,1,21,],arr2=[];
+    // for(var i=0; i< arr1.length;i++){
+    //     if(arr1[i] > 10){
+    //        // arr2.push(arr1[i]);
+    //        arr2[arr2.length] = arr1[i];
+    //     }
+    // }
+    // alert(arr2);
+
+    // var arr1 = [0,5,8,9,0,24,2,8,91,0,1,21,];
+    // for(var i=0; i< arr1.length;i++){
+    //     if(arr1[i] == 0){
+    //         arr1.splice(i,1);
+    //     }
+    // }
+    // alert(arr1);
+
+    // 去掉重复
+
+    // var arr1 = [0,5,8,9,0,24,2,8,91,0,1,9,];
+    // for(var i=0; i< arr1.length;i++){
+    //     for(var j = i+1; j<arr1.length;j++){
+    //         if(arr1[i] == arr1[j]){
+    //             arr1.splice(j,1);
+                
+    //         }
+    //     }
+    // }
+    // alert(arr1);
+
+    // 翻转 数组
+
+    // var arr1 = [0,5,8,9,0,24,2,8,91,0,1,9,],arr2=[];
+    // for(var i = arr1.length-1;i >= 0;i--){
+    //     arr2[arr2.length]= arr1[i];
+    // }
+    // alert(arr1.reverse()); //9,1,0,91,8,2,24,0,9,8,5,0
+    // alert(arr2);           //9,1,0,91,8,2,24,0,9,8,5,0
+    // alert(arr2 == arr1.reverse());
+    // alert(arr2.length);
+
+    //冒泡排序 
+    // var arr = [0,6,4,2,7,3,9,1,5,8];
+    // var mid = 0;
+    // for(var i = 0;i < arr.length;i++){
+    //     for(var j = i+1;j < arr.length;j++){
+    //         if(arr[i] < arr[j]){
+    //                 mid = arr[j];
+    //                 arr[j] = arr[i];
+    //                 arr[i] =mid;
+    //         }
+    //     }
+    // }
+    // alert(arr)
+    function getR(){
+        this.name = "zhang";
+
+    }
+    alert(typeof getR());//undefined
+</script>
+</body>
+
+</html>

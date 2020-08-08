@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象object</title>
+</head>
+<body>
+    <script>
+        // var box = new Object(); //创建对象 
+        // box.name = "zhang"//属性 
+        // box.age = 27;
+        // // alert(box);
+
+
+        // var box = Object();//省略关键字new
+
+
+        // var box = {
+        //     name:"zhang",
+        //     age:"age"
+        // } //字面量方式创建对象
+        // var box = {
+        //     "name":"zhang",  // 属性可以用字符串方式
+        //     "age":"age"
+        // } //字面量方式创建对象
+        // var box= {};
+        // box.name = "zhang"; //传统方式赋值
+        // var box ={
+        //     name:"zhang",
+        //     age:27
+        // }
+       // alert(box.name);
+        //alert(box["name"]);//用数组方式 要有引号
+
+
+        /* 给对象创建方法*/
+        // function objrun(){
+        //     return 1;
+        // }
+        // var box = new Object();
+        // box.name = "zhang";
+        // box.age = 27;
+        // box.run = objrun()
+        // //alert(box.run)
+        // var box = {
+        //     name : "zhang",
+        //     age :27,
+        //     run :function(){ // 匿名函数
+
+        //     }
+        // }
+
+        // /*  delete  删除属性*/
+        // var box = new Object();
+        // box.name = "zhang";
+        // box.age = 27;
+        // box.run = objrun;
+        //alert(box.run());
+        //alert(box.run)
+       // alert(box.age); //27
+       // delete box.age;
+       // alert(box.age); //undefined
+
+    //    function box(name,age,height,address,love){
+    //        alert(name);
+    //        alert(age);
+    //    }
+    //    box("zhang",27,178,"深圳","打球");
+    //    function box(obj){
+    //        if(obj.name != undefined)alert(obj.name);
+    //        if(obj.age != undefined)alert(obj.age); // 一个完整的 对象需要很多判断
+    //    }
+    //    var obj ={
+    //        name : "zhang",
+    //        age : 27,
+    //        love :"打球"
+    //    }
+    //    box(obj);
+
+       function box(obj){
+        if(obj.name != undefined)alert(obj.name);
+           if(obj.age != undefined)alert(obj.age); 
+       }
+       box({name : "zhang",age : 27,love :"打球"});
+    </script>
+</body>
+</html>

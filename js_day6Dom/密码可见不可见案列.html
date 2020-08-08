@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:400px;
+            border-bottom:1px solid #ccc;
+            margin:100px auto;
+        }
+        label{
+            display: inline-block;
+            width:24px;
+            height:30px;
+            background-color:aquamarine;
+        }
+        .box input{
+            width:370px;
+            height:30px;
+            border:0;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="password" name="pwd" id="pwd">
+        <label for="pwd">显示</label>
+    </div>
+    <script>
+        var label = document.querySelector("label");
+        var pwd =  document.getElementById("pwd");
+        var flag = 1;
+        label.onclick = function (){
+            if(flag){
+                label.innerHTML = "隐藏";
+                label.style.backgroundColor = "pink";
+                pwd.type =  "text";
+                flag = 0;
+            }else{
+                label.innerHTML = "显示";
+                label.style.backgroundColor = "aquamarine";
+                pwd.type =  "password";
+                flag = 1;
+            }
+        }
+    </script>
+</body>
+</html>

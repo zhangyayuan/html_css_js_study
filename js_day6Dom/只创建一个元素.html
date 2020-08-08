@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="首部添加子元素" id="add">
+    <div id="dv">
+
+    </div>
+    <script>
+        var add= document.getElementById("add");
+        var dv = document.getElementById("dv");
+        console.log(add);
+        add.onclick = function(){
+            if(document.getElementById("btn1")){
+                dv.removeChild(document.getElementById("btn1"))
+            }
+            var input = document.createElement("input");
+            input.type="button";
+            input.value = "按钮1";
+            input.id = "btn1";
+            dv.appendChild(input);
+            
+        }
+    </script>
+</body>
+</html>

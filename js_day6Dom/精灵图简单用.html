@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+            width:200px;
+            margin:100px auto;
+        }
+        ul li {
+            float:left;
+            width:50px;
+            height:50px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        ul li span {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-top:10px;
+            background: url(images/sprit.png) no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ul>
+    <script>
+        var li = document.getElementsByTagName("li");
+        var y =0;
+        for(var i = 0 ; i < li.length;i++){
+            li[i].childNodes[0].style.backgroundPositionY = y +"px";
+            y -= 44;
+        }
+    </script>
+</body>
+</html>

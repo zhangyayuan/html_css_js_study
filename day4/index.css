@@ -1,0 +1,66 @@
+body{
+    font:16px/2 'Microsoft YaHei';
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+   
+    background-color:red;
+    color:blue
+}
+p{
+    color:red;
+    margin: 0px;
+    padding: 0px;
+}
+}
+.nav a{
+    color: red;
+    font-size: 16px;
+    background-color:blue;
+    display: inline-block;
+}
+.nav ul{
+    margin: 0px;
+    padding: 0px;
+}
+.nav ul  li{
+    /* padding: 0px;
+    margin:0px; */
+    margin: 0px;
+    /* font:20px/20px 'Microsoft YaHei'; */
+    list-style-type: none;
+    list-style-position:inside;
+    background-color: cyan;
+    
+}
+.nav ul li a{
+    color: blueviolet;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+.nav ul li span a{
+    color: brown;
+    font-size: 12px;
+}
+.name1::placeholder{
+    color:red
+}
+.table1,tr,td,th{
+    border: 1px solid green;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: center;
+}
+.table1{
+    width: 300px;
+    height: 100px;
+}
+.table1 tr th{
+    background-color: green;
+}
+caption{
+    caption-side: bottom;
+}
+
